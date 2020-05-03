@@ -1,0 +1,289 @@
+<template>
+  <footer>
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <div
+            class="col-md-4 col-lg-4 footer-about wow fadeInUp animated animated"
+            style="visibility: visible; animation-name: fadeInUp;"
+          >
+            <h1>Partners</h1>
+            <ul id="partners">
+              <li>
+                <img src="https://medncom.com/wp-content/uploads/2017/11/Ooredoo-black.png" alt />
+                <img src="http://assets.stickpng.com/images/5842905ca6515b1e0ad75ab9.png" alt />
+              </li>
+              <li>
+                <img
+                  src="https://w7.pngwing.com/pngs/920/617/png-transparent-huawei-sydney-business-zte-%E5%8D%8E%E4%B8%BA-sydney.png"
+                />
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Logo_Alg%C3%A9rie_T%C3%A9l%C3%A9com.svg/1200px-Logo_Alg%C3%A9rie_T%C3%A9l%C3%A9com.svg.png"
+                  alt
+                />
+              </li>
+              <li>
+                <img src="http://assets.stickpng.com/images/58429064a6515b1e0ad75aba.png" alt />
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/MIT_logo.svg/1280px-MIT_logo.svg.png"
+                  alt
+                />
+              </li>
+            </ul>
+          </div>
+          <div
+            class="col-md-4 col-lg-4 offset-lg-1 footer-contact wow fadeInDown animated animated"
+            style="visibility: visible; animation-name: fadeInDown;"
+          >
+            <h3>Contact</h3>
+            <p>
+              <font-awesome-icon :icon="['fas', 'map-marker-alt']" />Dergana , Alger , min
+              jihet khamej ou bnin
+            </p>
+            <p>
+              <font-awesome-icon :icon="['fas', 'phone']" />Phone: (+213) 78 29 83 435
+            </p>
+            <p>
+              <font-awesome-icon :icon="['fas', 'envelope']" />Email:
+              <a href="mailto:hello@domain.com">geii@enst.dz</a>
+            </p>
+          </div>
+          <div
+            class="col-md-4 col-lg-3 footer-social wow fadeInUp animated animated"
+            style="visibility: visible; animation-name: fadeInUp;"
+          >
+            <h3>Follow us</h3>
+            <p>
+              <a href="#">
+                <font-awesome-icon :icon="['fab', 'facebook']" />
+              </a>
+              <a href="#">
+                <font-awesome-icon :icon="['fab', 'google-plus-g']" />
+              </a>
+              <a href="#">
+                <font-awesome-icon :icon="['fab', 'youtube']" />
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</template>
+
+<script>
+export default {
+  name: "myfooter"
+};
+</script>
+
+<style scoped>
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #888;
+  line-height: 30px;
+  text-align: center;
+}
+strong {
+  font-weight: 600;
+}
+a {
+  color: #856dc0;
+  border-bottom: 1px dashed #856dc0;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+a:hover,
+a:focus {
+  color: #856dc0;
+  border: 0;
+  text-decoration: none;
+}
+h1,
+h2 {
+  margin-top: 10px;
+  font-size: 38px;
+  font-weight: 300;
+  color: #555;
+  line-height: 50px;
+  font-style: italic;
+}
+h3 {
+  font-size: 22px;
+  font-weight: 300;
+  color: #555;
+  line-height: 30px;
+  font-style: italic;
+}
+img {
+  max-width: 100%;
+}
+.medium-paragraph {
+  font-size: 17px;
+  line-height: 32px;
+}
+::-moz-selection {
+  background: #7762ac;
+  color: #fff;
+  text-shadow: none;
+}
+::selection {
+  background: #7762ac;
+  color: #fff;
+  text-shadow: none;
+}
+/***** General style, all sections *****/
+.section-container {
+  margin: 0 auto;
+  padding-bottom: 80px;
+}
+.section-container-gray-bg {
+  background: #f8f8f8;
+}
+.section-container-image-bg,
+.section-container-image-bg h2,
+.section-container-image-bg h3 {
+  color: #fff;
+}
+.section-container-image-bg .divider-1 span {
+  border-color: #fff;
+}
+.section-description {
+  margin-top: 60px;
+  padding-bottom: 10px;
+}
+.section-description p {
+  margin-top: 20px;
+  padding: 0 120px;
+}
+.section-container-image-bg .section-description p {
+  opacity: 0.8;
+}
+.section-bottom-button {
+  padding-top: 60px;
+}
+/***** Footer *****/
+
+.footer-top {
+  padding: 60px 0;
+  background: #333;
+  text-align: left;
+  color: #aaa;
+}
+.footer-top h3 {
+  padding-bottom: 10px;
+  color: #fff;
+}
+
+.footer-about img.logo-footer {
+  max-width: 74px;
+  margin-top: 0;
+  margin-bottom: 18px;
+}
+.footer-about p a {
+  color: #aaa;
+  border-bottom: 1px dashed #666;
+}
+.footer-about p a:hover,
+.footer-about p a:focus {
+  color: #fff;
+  border-color: #aaa;
+}
+
+.footer-contact p {
+  word-wrap: break-word;
+}
+.footer-contact i {
+  padding-right: 10px;
+  font-size: 18px;
+  color: #666;
+}
+.footer-contact p a {
+  color: #aaa;
+  border-bottom: 1px dashed #666;
+}
+.footer-contact p a:hover,
+.footer-contact p a:focus {
+  color: #fff;
+  border-color: #aaa;
+}
+
+.footer-social a {
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 8px;
+  color: #777;
+  border: 0;
+}
+.footer-social a:hover,
+.footer-social a:focus {
+  color: #aaa;
+  border: 0;
+}
+.footer-social i {
+  font-size: 24px;
+  vertical-align: middle;
+}
+
+.footer-bottom {
+  padding: 15px 0;
+  background: #444;
+  text-align: left;
+  color: #aaa;
+}
+
+.footer-copyright p {
+  margin: 0;
+  padding: 0.5rem 0;
+}
+.footer-copyright a {
+  color: #fff;
+  border: 0;
+}
+.footer-copyright a:hover,
+.footer-copyright a:focus {
+  color: #aaa;
+  border: 0;
+}
+
+/* footer navbar */
+.navbar {
+  padding: 0;
+  background: #444;
+  backface-visibility: hidden;
+}
+.navbar-dark .navbar-nav {
+  font-size: 15px;
+  color: #fff;
+  font-weight: 400;
+}
+.navbar-dark .navbar-nav .nav-link {
+  color: #fff;
+  border: 0;
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: #aaa;
+}
+.navbar-dark .navbar-nav .nav-link:focus {
+  color: #aaa;
+  outline: 0;
+}
+.navbar-expand-md .navbar-nav .nav-link {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* partners */
+#partners {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0 !important;
+  align-content: space-evenly;
+}
+#partners li img {
+  width: 10vw;
+}
+</style>
