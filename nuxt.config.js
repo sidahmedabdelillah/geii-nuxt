@@ -1,3 +1,5 @@
+const googleAuthID =
+  "366986770967-cm1f8rg38ubercuqkqnfdodde0uesjnv.apps.googleusercontent.com";
 export default {
   mode: "universal",
   /*
@@ -66,7 +68,7 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: [],
+  buildModules: ["@nuxtjs/dotenv"],
   /*
    ** Nuxt.js modules
    */
@@ -98,8 +100,7 @@ export default {
     // Options
     strategies: {
       google: {
-        client_id:
-          "241971275862-qkdpn544b461cqua7hgt1f6h999ohcup.apps.googleusercontent.com"
+        client_id: googleAuthID
       }
     }
   },

@@ -3,8 +3,7 @@
     <h2 class="text-center">Sign in</h2>
     <div class="text-center social-btn">
       <a @click="login" href="#" class="btn btn-danger btn-block">
-        <font-awesome-icon :icon="['fab', 'google']" />
-        Sign in with
+        <font-awesome-icon :icon="['fab', 'google']" />Sign in with
         <b>Google</b>
       </a>
     </div>

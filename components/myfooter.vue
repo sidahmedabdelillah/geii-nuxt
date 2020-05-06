@@ -35,7 +35,7 @@
             class="col-md-4 col-lg-4 offset-lg-1 footer-contact wow fadeInDown animated animated"
             style="visibility: visible; animation-name: fadeInDown;"
           >
-            <h3>Contact</h3>
+            <h1>Contact</h1>
             <p>
               <font-awesome-icon :icon="['fas', 'map-marker-alt']" />Dergana , Alger , min
               jihet khamej ou bnin
@@ -52,7 +52,7 @@
             class="col-md-4 col-lg-3 footer-social wow fadeInUp animated animated"
             style="visibility: visible; animation-name: fadeInUp;"
           >
-            <h3>Follow us</h3>
+            <h1>Follow us</h1>
             <p>
               <a href="#">
                 <font-awesome-icon :icon="['fab', 'facebook']" />
@@ -86,17 +86,14 @@ body {
   line-height: 30px;
   text-align: center;
 }
-strong {
-  font-weight: 600;
-}
 a {
   color: #856dc0;
   border-bottom: 1px dashed #856dc0;
   text-decoration: none;
   transition: all 0.3s;
 }
-a:hover,
-a:focus {
+a:focus,
+a:hover {
   color: #856dc0;
   border: 0;
   text-decoration: none;
@@ -120,10 +117,6 @@ h3 {
 img {
   max-width: 100%;
 }
-.medium-paragraph {
-  font-size: 17px;
-  line-height: 32px;
-}
 ::-moz-selection {
   background: #7762ac;
   color: #fff;
@@ -134,38 +127,6 @@ img {
   color: #fff;
   text-shadow: none;
 }
-/***** General style, all sections *****/
-.section-container {
-  margin: 0 auto;
-  padding-bottom: 80px;
-}
-.section-container-gray-bg {
-  background: #f8f8f8;
-}
-.section-container-image-bg,
-.section-container-image-bg h2,
-.section-container-image-bg h3 {
-  color: #fff;
-}
-.section-container-image-bg .divider-1 span {
-  border-color: #fff;
-}
-.section-description {
-  margin-top: 60px;
-  padding-bottom: 10px;
-}
-.section-description p {
-  margin-top: 20px;
-  padding: 0 120px;
-}
-.section-container-image-bg .section-description p {
-  opacity: 0.8;
-}
-.section-bottom-button {
-  padding-top: 60px;
-}
-/***** Footer *****/
-
 .footer-top {
   padding: 60px 0;
   background: #333;
@@ -176,7 +137,6 @@ img {
   padding-bottom: 10px;
   color: #fff;
 }
-
 .footer-about img.logo-footer {
   max-width: 74px;
   margin-top: 0;
@@ -186,16 +146,15 @@ img {
   color: #aaa;
   border-bottom: 1px dashed #666;
 }
-.footer-about p a:hover,
-.footer-about p a:focus {
+.footer-about p a:focus,
+.footer-about p a:hover {
   color: #fff;
   border-color: #aaa;
 }
-
 .footer-contact p {
   word-wrap: break-word;
 }
-.footer-contact i {
+.footer-contact font-awesome-icon {
   padding-right: 10px;
   font-size: 18px;
   color: #666;
@@ -204,12 +163,11 @@ img {
   color: #aaa;
   border-bottom: 1px dashed #666;
 }
-.footer-contact p a:hover,
-.footer-contact p a:focus {
+.footer-contact p a:focus,
+.footer-contact p a:hover {
   color: #fff;
   border-color: #aaa;
 }
-
 .footer-social a {
   display: inline-block;
   margin-right: 20px;
@@ -217,65 +175,11 @@ img {
   color: #777;
   border: 0;
 }
-.footer-social a:hover,
-.footer-social a:focus {
+.footer-social a:focus,
+.footer-social a:hover {
   color: #aaa;
   border: 0;
 }
-.footer-social i {
-  font-size: 24px;
-  vertical-align: middle;
-}
-
-.footer-bottom {
-  padding: 15px 0;
-  background: #444;
-  text-align: left;
-  color: #aaa;
-}
-
-.footer-copyright p {
-  margin: 0;
-  padding: 0.5rem 0;
-}
-.footer-copyright a {
-  color: #fff;
-  border: 0;
-}
-.footer-copyright a:hover,
-.footer-copyright a:focus {
-  color: #aaa;
-  border: 0;
-}
-
-/* footer navbar */
-.navbar {
-  padding: 0;
-  background: #444;
-  backface-visibility: hidden;
-}
-.navbar-dark .navbar-nav {
-  font-size: 15px;
-  color: #fff;
-  font-weight: 400;
-}
-.navbar-dark .navbar-nav .nav-link {
-  color: #fff;
-  border: 0;
-}
-.navbar-dark .navbar-nav .nav-link:hover {
-  color: #aaa;
-}
-.navbar-dark .navbar-nav .nav-link:focus {
-  color: #aaa;
-  outline: 0;
-}
-.navbar-expand-md .navbar-nav .nav-link {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-/* partners */
 #partners {
   display: flex;
   flex-direction: column;
