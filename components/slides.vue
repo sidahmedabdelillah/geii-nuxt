@@ -6,34 +6,22 @@
     data-interval="50000"
   >
     <ol class="carousel-indicators">
-      <li
-        data-target="#carouselExampleindicatord"
-        data-slide-to="0"
-        class="active"
-      ></li>
+      <li data-target="#carouselExampleindicatord" data-slide-to="0" class="active"></li>
       <li data-target="#carouselExampleindicatord" data-slide-to="1"></li>
     </ol>
     <!---caroussel inner-->
     <div class="carousel-inner" role="listbox">
       <!----slide 1 -->
-      <div
-        class="carousel-item active no-repeat"
-        style="background-image:url('./Telecom.png')"
-      >
+      <div class="carousel-item active no-repeat" style="background-image:url('./Telecom.png')">
         <div class="carousel-caption">
           <h1>Systeme Telecommunication et Reaseaux</h1>
           <p>The best telecommunication formation</p>
           <a class="btn btn-primary">Formation</a>
-          <button type="button" class="btn btn-outline-secondary">
-            See More
-          </button>
+          <button type="button" class="btn btn-outline-secondary">See More</button>
         </div>
       </div>
       <!--slide 2 -->
-      <div
-        class="carousel-item no-repeat"
-        style="background-image: url('./SE.png');"
-      ></div>
+      <div class="carousel-item no-repeat" style="background-image: url('./SE.png');"></div>
     </div>
     <!---carousel inner end -->
     <a
@@ -59,7 +47,7 @@ export default {
   name: "slides"
 };
 </script>
-<style>
+<style scoped>
 /*---slider-----*/
 .carousel-item {
   height: 100vh;

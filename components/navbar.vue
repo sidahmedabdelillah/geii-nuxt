@@ -16,13 +16,10 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div
-        class="collapse navbar-collapse go-right"
-        id="navbarSupportedContent"
-      >
+      <div class="collapse navbar-collapse go-right" id="navbarSupportedContent">
         <ul class="navbar-nav go-right">
           <li class="nav-item active">
-            <nuxt-link class="nav-link" to="#">
+            <nuxt-link class="nav-link" to="/">
               Home
               <span class="sr-only">(current)</span>
             </nuxt-link>
@@ -38,13 +35,10 @@
               data-toggle="dropdown"
               aria-haspopup="true"
               aria-expanded="false"
-              >Education</a
-            >
+            >Education</a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <nuxt-link to="#" class="dropdown-item">Telecome</nuxt-link>
-              <nuxt-link to="#" class="dropdown-item"
-                >System Embarqué</nuxt-link
-              >
+              <nuxt-link to="#" class="dropdown-item">System Embarqué</nuxt-link>
               <nuxt-link to="#" class="dropdown-item">Automatisme</nuxt-link>
             </div>
           </li>
@@ -59,13 +53,7 @@
           </li>
           <li class="nav-item">
             <nuxt-link class="nav-link" to="/login">
-              <img
-                id="profilePic"
-                v-if="$auth.loggedIn"
-                v-bind:src="$auth.user.picture"
-                alt
-              />
-              <img v-else src="../assets/LOGIN.png" alt />
+              <img src="../assets/LOGIN.png" alt />
             </nuxt-link>
           </li>
         </ul>
@@ -84,7 +72,7 @@ export default {
   }
 };
 </script>
-<style>
+<style scoped>
 * {
   /*overflow-x: hidden;*/
   color: #505962;

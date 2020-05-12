@@ -13,7 +13,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .home {
   position: absolute !important;
   top: 0 !important;

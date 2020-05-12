@@ -1,80 +1,175 @@
 <template>
-  <div class="login-form">
-    <h2 class="text-center">Sign in</h2>
-    <div class="text-center social-btn">
-      <a @click="login" href="#" class="btn btn-danger btn-block">
-        <font-awesome-icon :icon="['fab', 'google']" />Sign in with
-        <b>Google</b>
-      </a>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h5 id="bold" class="card-title text-center">Se Connecter</h5>
+            <form class="form-signin">
+              <h5 class="card-title text-center">Connexion pour les étudiants</h5>
+              <div class="form-label-group">
+                <input
+                  v-model="identifier"
+                  type="email"
+                  id="inputEmail"
+                  class="form-control"
+                  placeholder="Email"
+                  required
+                  autofocus
+                />
+                <label for="inputEmail">Email</label>
+              </div>
+              <div class="form-label-group">
+                <input
+                  v-model="password"
+                  type="password"
+                  id="inputPassword"
+                  class="form-control"
+                  placeholder="Mot de passe"
+                  required
+                />
+                <label for="inputPassword">Mot de passe</label>
+              </div>
+              <button
+                class="btn btn-lg btn-primary btn-block text-uppercase"
+                @click.prevent="login"
+              >Se connecter</button>
+
+              <hr class="my-4" />
+              <h5 class="card-title text-center">Connexion pour les profs</h5>
+              <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit">
+                <i class="fab fa-google mr-2"></i>continuer avec google
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      identifier: "",
+      password: ""
+    };
+  },
   methods: {
-    login() {
-      this.$auth.loginWith("google");
+    async login() {
+      console.log(this.identifier + "   " + this.password);
+      const user = {
+        identifier: this.identifier,
+        password: this.password
+      };
+      let respond = await this.$axios.post(
+        "http://localhost:1337/auth/local/",
+        {
+          ...user
+        }
+      );
+      if (respond) {
+        if (respond.status == 200) {
+          const loggeduser = {
+            username: respond.data.user.username,
+            token: respond.data.jwt,
+            loggedIn: true,
+            userinfo: respond.data.user.userinfo
+          };
+          this.$store.commit("user/set", loggeduser);
+          this.$axios.setToken(loggeduser.token, "Bearer");
+          this.$router.push("/");
+        }
+      } else {
+        //server is not responding
+      }
+      console.log(respond);
     }
   }
 };
 </script>
 
 <style scoped>
-.login-form {
-  color: white;
-  border-radius: 5%;
-  background-color: #777;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  width: 50vw;
-  height: 50vh;
-  margin: 30px auto;
-  margin-top: 25vh !important;
+:root {
+  --input-padding-x: 1.5rem;
+  --input-padding-y: 0.75rem;
 }
-.login-form form {
-  margin-bottom: 15px;
-  background: #f7f7f7;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-  padding: 30px;
+
+body {
+  background: linear-gradient(to right, #0a346d, #1598ef);
 }
-.login-form h2 {
-  margin: 0 0 15px;
-  color: white;
+
+.card-signin {
+  border: 0;
+  border-radius: 0rem;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
 }
-.login-form .hint-text {
-  color: white;
-  padding-bottom: 15px;
-  text-align: center;
-}
-.form-control,
-.btn {
-  min-height: 38px;
-  border-radius: 2px;
-  width: 50%;
-  margin: auto !important;
-}
-.or-seperator i {
-  padding: 0 10px;
-  background: #f7f7f7;
-  position: relative;
-  top: -11px;
-  z-index: 1;
-}
-.social-btn .btn {
-  margin: 10px 0;
-  font-size: 15px;
-  text-align: center;
-  line-height: 24px;
-}
-.social-btn .btn i {
-  float: left;
-  margin: 4px 15px 0 5px;
-  min-width: 15px;
-}
-.login-btn {
-  font-size: 15px;
+#bold {
   font-weight: bold;
+}
+.card-signin .card-title {
+  margin-bottom: 2rem;
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+
+.card-signin .card-body {
+  padding: 2rem;
+}
+
+.form-signin {
+  width: 100%;
+}
+
+.form-signin .btn {
+  font-size: 80%;
+  border-radius: 0rem;
+  letter-spacing: 0.1rem;
+  font-weight: bold;
+  padding: 1rem;
+  transition: all 0.2s;
+}
+
+.form-label-group {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.form-label-group input {
+  height: auto;
+}
+
+.form-label-group > input,
+.form-label-group > label {
+  padding: var(--input-padding-y) var(--input-padding-x);
+}
+
+.form-label-group > label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+  line-height: 1.5;
+  color: #495057;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  transition: all 0.1s ease-in-out;
+}
+
+.form-control:focus {
+  box-shadow: 10px 0px 0px 0px #ffffff !important;
+}
+
+.btn-google {
+  color: white;
+  background-color: #ea4335;
+}
+
+.btn-facebook {
+  color: white;
+  background-color: #3b5998;
 }
 </style>

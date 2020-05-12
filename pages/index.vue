@@ -21,7 +21,7 @@ export default {
   async asyncData({ $axios }) {
     return {
       articles: await $axios.$get(
-        "http://localhost:1337/News?_sort=createdAt:DESC"
+        "http://localhost:1337/Articles?_sort=createdAt:DESC"
       )
     };
   },
@@ -40,7 +40,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .formation {
 }
 .home {

@@ -1,3 +1,4 @@
+const URI = "http://localshost:3000";
 const googleAuthID =
   "366986770967-cm1f8rg38ubercuqkqnfdodde0uesjnv.apps.googleusercontent.com";
 export default {
@@ -23,6 +24,32 @@ export default {
         type: "text/css",
         href:
           "https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      },
+      {
+        rel: "stylesheet",
+        type: "text/css",
+        href: "./vendor/mdi-font/css/material-design-iconic-font.min.css"
+      },
+      {
+        rel: "stylesheet",
+        type: "text/css",
+        href: "./vendor/font-awesome-4.7/css/font-awesome.min.css"
+      },
+      {
+        rel: "stylesheet",
+        type: "text/css",
+        href:
+          "./https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
+      },
+      {
+        rel: "stylesheet",
+        type: "text/css",
+        href: "./vendor/select2/select2.min.css"
+      },
+      {
+        rel: "stylesheet",
+        type: "text/css",
+        href: "./vendor/datepicker/daterangepicker.css"
       },
       {
         rel: "stylesheet",
@@ -64,7 +91,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ["~/plugins/axios", { ssr: false, src: "~/plugins/localstorage" }],
   /*
    ** Nuxt.js dev-modules
    */
@@ -77,9 +104,9 @@ export default {
     "bootstrap-vue/nuxt",
     // Doc: https://axios.nuxtjs.org/usage
     "@nuxtjs/axios",
+    "@nuxtjs/proxy",
     // Doc: https://github.com/nuxt-community/dotenv-module
     "@nuxtjs/dotenv",
-    "@nuxtjs/auth",
     [
       "nuxt-fontawesome",
       {
@@ -96,22 +123,21 @@ export default {
       }
     ]
   ],
-  auth: {
-    // Options
-    strategies: {
-      google: {
-        client_id: googleAuthID
-      }
-    }
-  },
+
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+  axios: {
+    baseURL: URI,
+    proxy: true
+  },
   /*
    ** Build configuration
    */
+  proxy: {
+    "/api": URL
+  },
   build: {
     /*
      ** You can extend webpack config here
