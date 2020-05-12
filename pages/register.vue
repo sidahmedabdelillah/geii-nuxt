@@ -88,7 +88,11 @@
           </div>
           <div class="row justify-content-start mt-4">
             <div class="col">
-              <button @click.prevent="register" class="btn btn-primary mt-4">Continue</button>
+              <button v-if="loading" class="btn btn-primary">
+                <span class="spinner-border spinner-border-sm"></span>
+                Loading..
+              </button>
+              <button v-else @click.prevent="register" class="btn btn-primary mt-4">Continue</button>
             </div>
           </div>
         </div>
@@ -116,7 +120,7 @@ export default {
       student: false,
       error: [],
       valid: false,
-      done: false
+      loading: false
     };
   },
   methods: {
@@ -196,6 +200,7 @@ export default {
         }
       }
     },
+
     studentregister() {
       const newstudent = {
         username: this.username,
@@ -224,11 +229,12 @@ export default {
           specialite: "all"
         }
       };
-      this.posttoserver(newsprof);
+      this.posttoserver(newprof);
     },
 
     async posttoserver(newuser) {
       try {
+        this.loading = true;
         respond = await this.$axios.post(
           "http://localhost:1337/auth/local/register1",
           newuser
@@ -242,11 +248,14 @@ export default {
           };
           this.$store.commit("user/set", loggeduser);
           this.$axios.setToken(loggeduser.token, "Bearer");
+          this.loading = false;
           this.$router.push("/");
         }
       } catch (error) {
+        this.loading = false;
         const response = error.response.data.message[0].messages[0].message;
         this.error.push(response);
+        if (!response) error.push("unknown error");
       }
     }
   }
