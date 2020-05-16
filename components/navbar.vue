@@ -18,24 +18,25 @@
 
       <div class="collapse navbar-collapse go-right" id="navbarSupportedContent">
         <ul class="navbar-nav go-right">
-          <li class="nav-item active">
+          <li class="nav-item">
             <nuxt-link class="nav-link" to="/">
               Home
               <span class="sr-only">(current)</span>
             </nuxt-link>
           </li>
           <li class="nav-item">
-            <nuxt-link class="nav-link" to="#">News</nuxt-link>
+            <nuxt-link class="nav-link" to="/news">News</nuxt-link>
           </li>
           <li class="nav-item dropdown">
-            <a
+            <nuxt-link
               class="nav-link dropdown-toggle"
               id="navbarDropdown"
               role="button"
               data-toggle="dropdown"
               aria-haspopup="true"
               aria-expanded="false"
-            >Education</a>
+              to="#"
+            >Education</nuxt-link>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <nuxt-link to="#" class="dropdown-item">Telecome</nuxt-link>
               <nuxt-link to="#" class="dropdown-item">System Embarqué</nuxt-link>
@@ -113,12 +114,18 @@ export default {
 .navbar-brand {
   height: 4 rem;
 }
+.nuxt-link-exact-active {
+  color: #f04b4c !important;
+}
 
-.navbar ul li a {
+a {
   color: white !important;
 }
 
 .navbar ul li a:hover {
+  color: #f04b4c !important;
+}
+.nuxt-link-exact-active {
   color: #f04b4c !important;
 }
 

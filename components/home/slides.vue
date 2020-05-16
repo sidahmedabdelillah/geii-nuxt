@@ -12,7 +12,7 @@
     <!---caroussel inner-->
     <div class="carousel-inner" role="listbox">
       <!----slide 1 -->
-      <div class="carousel-item active no-repeat" style="background-image:url('./Telecom.png')">
+      <div class="carousel-item active no-repeat" style="background-image:url('./Telecom.png') ">
         <div class="carousel-caption">
           <h1>Systeme Telecommunication et Reaseaux</h1>
           <p>The best telecommunication formation</p>
@@ -51,6 +51,11 @@ export default {
 /*---slider-----*/
 .carousel-item {
   height: 100vh;
+}
+.no-repeat {
+  background-repeat: no-repeat !important;
+  background-position: center;
+  background-size: cover;
 }
 
 .carousel-caption {

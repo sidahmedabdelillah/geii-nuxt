@@ -3,60 +3,45 @@
     <h1 class="font-weight-bold">Formation</h1>
     <div class="row cards-container">
       <div class="col-sm">
-        <div class="Formation-card ">
+        <div class="Formation-card">
           <h3>Specialité</h3>
           <ul>
             <li>
-              <img class="card-image" src="../assets/degree.png" alt srcset />
+              <img class="card-image" src="@/assets/degree.png" alt srcset />
               <p>les specialit plus demandé au demain</p>
             </li>
             <li>
-              <img
-                class="card-image"
-                src="../assets/check list.png"
-                alt
-                srcset
-              />
+              <img class="card-image" src="@/assets/check list.png" alt srcset />
               <p>les specialit plus demandé au demain</p>
             </li>
           </ul>
         </div>
       </div>
-      <div class="col-sm  ">
+      <div class="col-sm">
         <div class="Formation-card">
           <h3>Specialité</h3>
           <ul>
             <li>
-              <img class="card-image" src="../assets/degree.png" alt srcset />
+              <img class="card-image" src="@/assets/degree.png" alt srcset />
               <p>les specialit plus demandé au demain</p>
             </li>
             <li>
-              <img
-                class="card-image"
-                src="../assets/check list.png"
-                alt
-                srcset
-              />
+              <img class="card-image" src="@/assets/check list.png" alt srcset />
               <p>les specialit plus demandé au demain</p>
             </li>
           </ul>
         </div>
       </div>
-      <div class="col-sm ">
+      <div class="col-sm">
         <div class="Formation-card">
           <h3>Specialité</h3>
           <ul>
             <li>
-              <img class="card-image" src="../assets/degree.png" alt srcset />
+              <img class="card-image" src="@/assets/degree.png" alt srcset />
               <p>les specialit plus demandé au demain</p>
             </li>
             <li>
-              <img
-                class="card-image"
-                src="../assets/check list.png"
-                alt
-                srcset
-              />
+              <img class="card-image" src="@/assets/check list.png" alt srcset />
               <p>les specialit plus demandé au demain</p>
             </li>
           </ul>

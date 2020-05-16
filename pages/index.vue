@@ -12,11 +12,11 @@
 </template>
 
 <script>
-import slides from "../components/slides";
-import formation from "../components/formation";
-import myfooter from "../components/myfooter";
-import myabout from "@/components/myabout";
-import newssection from "@/components/newssection";
+import slides from "@/components/home/slides";
+import formation from "@/components/home/formation";
+import myfooter from "@/components/myfooter";
+import myabout from "@/components/home/myabout";
+import newssection from "@/components/home/newssection";
 export default {
   async asyncData({ $axios }) {
     return {

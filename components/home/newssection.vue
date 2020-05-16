@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import newspreview from "./PieceComponents/newspreview";
+import newspreview from "@/components/PieceComponents/newspreview";
 export default {
   name: "newssection",
   components: {

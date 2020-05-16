@@ -23,7 +23,7 @@
             <div class="col">
               <input
                 v-model="password"
-                type="pasword"
+                type="password"
                 class="form-control"
                 required
                 placeholder="Mot de pass"

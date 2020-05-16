@@ -1,9 +1,7 @@
 <template>
   <section id="mysection" class="section section-xl bg-default">
     <div class="container">
-      <div
-        class="row row-50 text-md-left align-items-md-center justify-content-md-between"
-      >
+      <div class="row row-50 text-md-left align-items-md-center justify-content-md-between">
         <div class="col-md-5 col-lg-4 order-md-2">
           <a href="index.html">
             <img
@@ -31,10 +29,7 @@
             </p>
           </div>
           <div class="offset-top-30">
-            <a
-              class="btn btn-icon btn-icon-right button-default"
-              href="history.html"
-            >
+            <a class="btn btn-icon btn-icon-right button-default" href="history.html">
               <span>Learn More</span>
               <font-awesome-icon :icon="['fa', 'arrow-right']" />
             </a>
@@ -46,7 +41,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: "myabout"
+};
 </script>
 <style scoped>
 /*** uncss> filename: test.css ***/
