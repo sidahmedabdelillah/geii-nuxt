@@ -1,6 +1,6 @@
 <template>
-  <a
-    href="#"
+  <nuxt-link
+    :to="getlink(article.id)"
     class="h-entry mb-30 v-height gradient"
     :style="{ backgroundImage: `url(${article.Picture.url})` }"
   >
@@ -8,13 +8,18 @@
       <h2>{{article.Title}}</h2>
       <span class="date">July 19, 2019</span>
     </div>
-  </a>
+  </nuxt-link>
 </template>
 
 <script>
 export default {
   name: "newspreview",
-  props: ["article"]
+  props: ["article"],
+  methods: {
+    getlink(id) {
+      return "/news/" + id;
+    }
+  }
 };
 </script>
 

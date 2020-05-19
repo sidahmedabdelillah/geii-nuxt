@@ -6,7 +6,7 @@
     </a>
     <div class="post-body">
       <h3 class="post-title">
-        <a href>{{article.Title}}</a>
+        <nuxt-link :to="getlink(article.id)">{{article.Title}}</nuxt-link>
       </h3>
       <ul class="post-meta">
         <li>{{getdate()}}</li>
@@ -49,6 +49,9 @@ export default {
         "December"
       ][date.substring(6, 7)];
       return date.substring(8, 9) + " " + mounths + " " + date.substring(0, 4);
+    },
+    getlink(id) {
+      return "/news/" + id;
     }
   }
 };

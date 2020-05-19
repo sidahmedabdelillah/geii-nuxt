@@ -8,9 +8,9 @@
           <div class="col-md-8 hot-post-left">
             <!-- post -->
             <div class="post post-thumb">
-              <a class="post-img" href>
+              <nuxt-link class="post-img" :to="getlink(articles[0].id)">
                 <img :src="articles[0].Picture.url" alt />
-              </a>
+              </nuxt-link>
               <div class="post-body">
                 <h3 class="post-title title-lg">
                   <a>{{articles[0].Title}}</a>
@@ -22,9 +22,9 @@
           <div class="col-md-4 hot-post-right">
             <!-- post -->
             <div class="post post-thumb">
-              <a class="post-img" href="blog-post.html">
+              <nuxt-link class="post-img" :to="getlink(articles[1].id)">
                 <img :src="articles[1].Picture.url" alt />
-              </a>
+              </nuxt-link>
               <div class="post-body">
                 <h3 class="post-title">
                   <a href="blog-post.html">{{articles[1].Title}}</a>
@@ -35,9 +35,9 @@
 
             <!-- post -->
             <div class="post post-thumb">
-              <a class="post-img" href>
+              <nuxt-link class="post-img" :to="getlink(articles[2].id)">
                 <img :src="articles[2].Picture.url" alt />
-              </a>
+              </nuxt-link>
               <div class="post-body">
                 <h3 class="post-title">
                   <a href>{{articles[1].Title}}</a>
@@ -119,6 +119,9 @@ export default {
       );
       console.log(this.articles);
       console.log(this.number);
+    },
+    getlink(id) {
+      return "/news/" + id;
     }
   },
 
