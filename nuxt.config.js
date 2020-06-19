@@ -1,4 +1,4 @@
-const URI = "http://localshost:3000";
+const URI = "https://stray-geii.herokuapp.com/";
 const googleAuthID =
   "366986770967-cm1f8rg38ubercuqkqnfdodde0uesjnv.apps.googleusercontent.com";
 export default {
@@ -130,7 +130,7 @@ export default {
    */
   axios: {
     baseURL: URI,
-    proxy: true
+    proxy: false
   },
   /*
    ** Build configuration

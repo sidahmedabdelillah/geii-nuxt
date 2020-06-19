@@ -236,7 +236,7 @@ export default {
       try {
         this.loading = true;
         respond = await this.$axios.post(
-          "http://localhost:1337/auth/local/register1",
+          "/auth/local/register1",
           newuser
         );
         if (respond.status == 200) {

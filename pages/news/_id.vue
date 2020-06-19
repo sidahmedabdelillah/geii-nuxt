@@ -49,7 +49,7 @@ export default {
     // called every time before loading the component
     return {
       id: params.id,
-      article: await $axios.$get(`http://localhost:1337/Articles/${params.id}`)
+      article: await $axios.$get(`/Articles/${params.id}`)
     };
   },
   mounted() {

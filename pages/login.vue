@@ -81,7 +81,7 @@ export default {
       try {
         this.loading = true;
         const respond = await this.$axios.post(
-          "http://localhost:1337/auth/local/",
+          "/auth/local/",
           user
         );
 
