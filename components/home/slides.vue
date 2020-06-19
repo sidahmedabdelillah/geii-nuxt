@@ -12,16 +12,14 @@
     <!---caroussel inner-->
     <div class="carousel-inner" role="listbox">
       <!----slide 1 -->
-      <div class="carousel-item active no-repeat" style="background-image:url('./Telecom.png') ">
-        <div class="carousel-caption">
-          <h1>Systeme Telecommunication et Reaseaux</h1>
-          <p>The best telecommunication formation</p>
-          <a class="btn btn-primary">Formation</a>
-          <button type="button" class="btn btn-outline-secondary">See More</button>
-        </div>
-      </div>
+      <slide1 p='The best telecommunication formation' h1="Systeme Telecommunication et Reaseaux"  active ="active" image='./Telecom.png'></slide1>
       <!--slide 2 -->
-      <div class="carousel-item no-repeat" style="background-image: url('./SE.png');"></div>
+      <slide1 p='SE' h1="System Embarqué" image='./SE.png'></slide1>
+      <!--slide 3 -->
+      <slide1 p='SE' h1="Automatisme et infomatique industriel" image='./auto.jpg'></slide1>
+
+      
+
     </div>
     <!---carousel inner end -->
     <a
@@ -43,14 +41,18 @@
   </div>
 </template>
 <script>
+import slide1 from "./slides/silde1"
 export default {
-  name: "slides"
+  name: "slides",
+  components : {
+    slide1
+  }
 };
 </script>
 <style scoped>
 /*---slider-----*/
 .carousel-item {
-  height: 100vh;
+  height: 60vh;
 }
 .no-repeat {
   background-repeat: no-repeat !important;
@@ -58,58 +60,7 @@ export default {
   background-size: cover;
 }
 
-.carousel-caption {
-  width: 80%;
-  position: absolute !important;
-  right: 0%;
-  top: 35%;
-  text-align: center;
-}
 
-.carousel-caption h1 {
-  width: 80% !important;
-  font-weight: bold;
-  font-size: 4vw;
-  color: #f04b4c;
-}
 
-.carousel-caption p {
-  margin-left: 4vw;
-  text-align: center;
-  font-weight: 600;
-  width: 80% !important;
-  font-size: 2vw;
-  color: white;
-}
 
-.btn-primary {
-  align-items: center;
-  padding: auto !important;
-  margin-left: -10vw;
-  background-color: #f04b4c !important;
-  margin-right: 2vh;
-  width: 15vw;
-  font-size: 1.5vw;
-  height: 6vw;
-  vertical-align: middle !important;
-}
-
-.btn-primary:hover {
-  background-color: #782000 !important;
-}
-
-.btn-outline-secondary {
-  height: 6vw;
-  padding: auto !important;
-  font-size: 1.5vw;
-  width: 15vw;
-  margin-left: 2vh;
-  color: white !important;
-  border-color: white !important;
-}
-
-.btn-outline-secondary:hover {
-  color: black !important;
-  background-color: white !important;
-}
 </style>

@@ -86,13 +86,14 @@
           <div class="alertcontainer">
             <div class="alert alert-danger" role="alert" v-for="er in error" :key="er[0]">{{er}}</div>
           </div>
-          <div class="row justify-content-start mt-4">
-            <div class="col">
+          <div class="row  mt-4">
+            <div class="col justify-content-space-around">
               <button v-if="loading" class="btn btn-primary">
                 <span class="spinner-border spinner-border-sm"></span>
                 Loading..
               </button>
-              <button v-else @click.prevent="register" class="btn btn-primary mt-4">Continue</button>
+                  <button v-else @click.prevent="register" class="btn btn-primary mt-4">Continue</button>
+                  <nuxt-link to="login"><button  class="btn btn-warning mt-4 text-right">Se Connecter</button></nuxt-link>
             </div>
           </div>
         </div>
@@ -263,6 +264,11 @@ export default {
 </script>
 
 <style scoped>
+.justify-content-space-around{
+  display: flex;
+  justify-content: space-between;
+}
+
 .alertcontainer {
   margin-top: 5%;
 }

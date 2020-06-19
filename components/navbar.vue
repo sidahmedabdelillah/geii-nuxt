@@ -28,15 +28,15 @@
             <nuxt-link class="nav-link" to="/news">News</nuxt-link>
           </li>
           <li class="nav-item dropdown">
-            <nuxt-link
+            <a
               class="nav-link dropdown-toggle"
               id="navbarDropdown"
               role="button"
               data-toggle="dropdown"
               aria-haspopup="true"
               aria-expanded="false"
-              to="#"
-            >Education</nuxt-link>
+              href=""
+            >Education</a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <nuxt-link to="#" class="dropdown-item">Telecome</nuxt-link>
               <nuxt-link to="#" class="dropdown-item">System Embarqué</nuxt-link>

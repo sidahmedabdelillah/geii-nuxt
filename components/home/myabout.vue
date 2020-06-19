@@ -219,7 +219,7 @@ html .btn:focus {
   margin-top: 5vh !important;
 }
 #mysection {
-  padding: 70px 0 20px 0 !important;
+  padding: 0px 0 20px 0 !important;
 }
 #mydiv {
   padding: 2vh !important;

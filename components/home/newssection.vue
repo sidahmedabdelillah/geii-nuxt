@@ -1,6 +1,7 @@
 <template>
   <div class="site-section">
     <div class="container">
+      <h1 class="font-weight-bold">Les actualité</h1>
       <div class="row align-items-stretch retro-layout-2">
         <div class="col-md-4">
           <newspreview :article="articles[0]" />
