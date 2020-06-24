@@ -63,24 +63,6 @@
             <div v-for="r in articles" :key="r.id">
               <articleline :article="r" />
             </div>
-            <!-- /post -->
-
-            <!-- post -->
-
-            <!-- /post -->
-
-            <!-- post -->
-
-            <!-- /post -->
-
-            <!-- post -->
-
-            <!-- /post -->
-
-            <!-- post -->
-
-            <!-- /post -->
-
             <div class="section-row loadmore text-center">
               <a @click="click" class="primary-button">Load More</a>
             </div>

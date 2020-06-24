@@ -1,0 +1,59 @@
+* [33mcommit 1e17d7cd293ab6f39ab2c6a44505cb0dd6339aab[m[33m ([m[1;36mHEAD -> [m[1;32mchange_home[m[33m, [m[1;31morigin/change_home[m[33m)[m
+[31m|[m Author: sidahmedabdelillah <s_bentegar@enst.dz>
+[31m|[m Date:   Fri Jun 19 22:20:40 2020 +0100
+[31m|[m 
+[31m|[m     changed some home stuff
+[31m|[m 
+* [33mcommit af3de96caebdba977aaeb07508e84a1a92859a5b[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;31mheroku/master[m[33m, [m[1;32mmaster[m[33m)[m
+[31m|[m Author: sidahmedabdelillah <s_bentegar@enst.dz>
+[31m|[m Date:   Fri Jun 19 16:05:44 2020 +0100
+[31m|[m 
+[31m|[m     make it better
+[31m|[m 
+* [33mcommit d77ad554ca81fe9b5dfd7668294267cb0bc609a5[m
+[31m|[m Author: sidahmedabdelillah <s_bentegar@enst.dz>
+[31m|[m Date:   Tue May 19 03:33:57 2020 +0100
+[31m|[m 
+[31m|[m     added new single page and all the references
+[31m|[m 
+* [33mcommit 3626e1646149a9b7242c2f8cac2e907dcb01aba6[m
+[31m|[m Author: sidahmedabdelillah <s_bentegar@enst.dz>
+[31m|[m Date:   Sat May 16 02:28:21 2020 +0100
+[31m|[m 
+[31m|[m     fixed some stuff
+[31m|[m 
+* [33mcommit 46037a8c4e468cf97de97192bb23d344715ed29b[m
+[31m|[m Author: sidahmedabdelillah <s_bentegar@enst.dz>
+[31m|[m Date:   Fri May 15 04:11:32 2020 +0100
+[31m|[m 
+[31m|[m     added news page
+[31m|[m 
+* [33mcommit 06bacbd0df705dd59c43a6cf3048d4c6452103f5[m
+[31m|[m Author: sidahmedabdelillah <s_bentegar@enst.dz>
+[31m|[m Date:   Tue May 12 05:31:22 2020 +0100
+[31m|[m 
+[31m|[m     updated register and loggin
+[31m|[m 
+* [33mcommit 92f8b540871320e24bb10eab28417b388f945683[m
+[31m|[m Author: sidahmedabdelillah <s_bentegar@enst.dz>
+[31m|[m Date:   Tue May 12 01:10:39 2020 +0100
+[31m|[m 
+[31m|[m     added register
+[31m|[m 
+* [33mcommit 86e7665969316205cda0f8d47be16aeff6fbffd3[m
+[31m|[m Author: sidahmedabdelillah <s_bentegar@enst.dz>
+[31m|[m Date:   Sat May 9 21:39:52 2020 +0100
+[31m|[m 
+[31m|[m     canceled Google login working with local auth still has a lot to do
+[31m|[m 
+* [33mcommit aacdb41cabfe9c49e138eccd50edffea1022b14e[m
+[31m|[m Author: sidahmedabdelillah <s_bentegar@enst.dz>
+[31m|[m Date:   Wed May 6 23:25:09 2020 +0100
+[31m|[m 
+[31m|[m     progress with home page
+[31m|[m 
+* [33mcommit 7e4aa76badc0f5a4a7acc22f7bfb8448680f1e3b[m
+  Author: sidahmedabdelillah <s_bentegar@enst.dz>
+  Date:   Sun May 3 03:07:38 2020 +0100
+  
+      first

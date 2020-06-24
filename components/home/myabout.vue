@@ -222,7 +222,7 @@ html .btn:focus {
   padding: 0px 0 20px 0 !important;
 }
 #mydiv {
-  padding: 2vh !important;
+  padding-top: 2vh !important;
 }
 @media (max-width: 576px) {
   img {

@@ -25,7 +25,7 @@
             </nuxt-link>
           </li>
           <li class="nav-item">
-            <nuxt-link class="nav-link" to="/news">News</nuxt-link>
+            <nuxt-link class="nav-link" to="/news">Actualité</nuxt-link>
           </li>
           <li class="nav-item dropdown">
             <a
@@ -35,8 +35,8 @@
               data-toggle="dropdown"
               aria-haspopup="true"
               aria-expanded="false"
-              href=""
-            >Education</a>
+              href
+            >Formation</a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <nuxt-link to="#" class="dropdown-item">Telecome</nuxt-link>
               <nuxt-link to="#" class="dropdown-item">System Embarqué</nuxt-link>
@@ -44,7 +44,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <nuxt-link to="#" class="nav-link">Research</nuxt-link>
+            <nuxt-link to="#" class="nav-link">Recherche</nuxt-link>
           </li>
           <li class="nav-item">
             <nuxt-link class="nav-link" to="#">Members</nuxt-link>
