@@ -1,4 +1,4 @@
-const URI = "http://localhost:1338";
+const URI = "https://geii-backend.herokuapp.com";
 const googleAuthID =
   "366986770967-cm1f8rg38ubercuqkqnfdodde0uesjnv.apps.googleusercontent.com";
 export default {
