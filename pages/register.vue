@@ -209,9 +209,9 @@ export default {
         email: this.email,
         role: "student",
         info: {
-          year: +this.year[0],
-          fullname: this.fullname,
-          specialite: this.specialite
+          Year: this.year,
+          Full_name:  this.fullname,
+          Specialite: this.specialite
         }
       };
 

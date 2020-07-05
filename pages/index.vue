@@ -1,8 +1,8 @@
 <template>
   <section class="home">
-    <slides />
+    <slides :slides="slides" />
     <div class="mycontainer">
-      <myabout />
+      <myabout :home_about="home_about" />
       <formation class="formation" />
       <newssection :articles="articles" />
     </div>
@@ -20,15 +20,14 @@ import newssection from "@/components/home/newssection";
 export default {
   async asyncData({ $axios }) {
     return {
-      articles: await $axios.$get(
-        "/Articles?_sort=createdAt:DESC"
-      )
+      articles: await $axios.$get("/Articles?_sort=createdAt:DESC"),
+      home_about: await $axios.$get("/home-about"),
+      slides: await $axios.$get("/slides")
     };
   },
   date: () => {
     return {};
   },
-  mounted: function() {},
 
   components: {
     slides,

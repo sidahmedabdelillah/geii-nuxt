@@ -6,7 +6,7 @@
           <a href="index.html">
             <img
               class="img-responsive d-inline-block"
-              src="/GEII ENST 1.1 .png"
+              :src="home_about.Picture.url"
               alt
               width="326"
               height="329"
@@ -20,16 +20,10 @@
           </h2>
           <hr class="divider bg-madison divider-md-0" />
           <div class="offset-top-35 offset-lg-top-60">
-            <p>
-              Le département Génie Électrique et Informatique Industrielle
-              (GEII), forme en 3 ans des cadres techniques de haut niveau
-              destinés à occuper dans le monde industriel des postes
-              d’ingénieurs dans les secteurs de Telecommunication , de
-              l’électronique, et de l’automatique.
-            </p>
+            <p>{{home_about.Paragraph}}</p>
           </div>
           <div class="offset-top-30">
-            <a class="btn btn-icon btn-icon-right button-default" href="history.html">
+            <a class="btn btn-icon btn-icon-right button-default">
               <span>Learn More</span>
               <font-awesome-icon :icon="['fa', 'arrow-right']" />
             </a>
@@ -42,7 +36,8 @@
 
 <script>
 export default {
-  name: "myabout"
+  name: "myabout",
+  props: ["home_about"]
 };
 </script>
 <style scoped>

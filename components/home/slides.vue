@@ -5,21 +5,27 @@
     data-ride="carousel"
     data-interval="50000"
   >
+    <!-----
     <ol class="carousel-indicators">
-      <li data-target="#carouselExampleindicatord" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleindicatord" data-slide-to="1"></li>
+      <li
+        v-for="(s , index) in slides"
+        :key="s.id"
+        data-target="#carouselExampleindicatord"
+        :data-slide-to="index"
+        :class="{ 'active': index === 0 }"
+      ></li>
     </ol>
+    -->
     <!---caroussel inner-->
     <div class="carousel-inner" role="listbox">
-      <!----slide 1 -->
-      <slide1 p='The best telecommunication formation' h1="Systeme Telecommunication et Reaseaux"  active ="active" image='./Telecom.png'></slide1>
-      <!--slide 2 -->
-      <slide1 p='SE' h1="System Embarqué" image='./SE.png'></slide1>
-      <!--slide 3 -->
-      <slide1 p='SE' h1="Automatisme et infomatique industriel" image='./auto.jpg'></slide1>
-
-      
-
+      <slide1
+        v-for="(s,index) in slides "
+        :key="s.id"
+        :p="s.Paragraph"
+        :h1="s.Title"
+        :active="{ 'active': index === 0 }"
+        :image="s.Picture.url"
+      ></slide1>
     </div>
     <!---carousel inner end -->
     <a
@@ -41,11 +47,15 @@
   </div>
 </template>
 <script>
-import slide1 from "./slides/silde1"
+import slide1 from "./slides/silde1";
 export default {
   name: "slides",
-  components : {
+  components: {
     slide1
+  },
+  props: ["slides"],
+  mounted() {
+    console.log(this.slides);
   }
 };
 </script>
@@ -59,8 +69,4 @@ export default {
   background-position: center;
   background-size: cover;
 }
-
-
-
-
 </style>

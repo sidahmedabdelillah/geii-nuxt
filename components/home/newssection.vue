@@ -27,10 +27,7 @@ export default {
   components: {
     newspreview
   },
-  props: ["articles"],
-  mounted: function() {
-    console.log(this.articles);
-  }
+  props: ["articles"]
 };
 </script>
 

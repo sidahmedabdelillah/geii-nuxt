@@ -1,24 +1,24 @@
 <template>
-  <div  v-bind:class="[active , carousel]"   :style="{ backgroundImage: `url(${image})` }">
-        <div class="carousel-caption">
-          <h1>{{h1}}</h1>
-          <p>{{p}}</p>
-          <a class="btn btn-primary">Formation</a>
-          <button type="button" class="btn btn-outline-secondary">See More</button>
-        </div>
+  <div v-bind:class="[active , carousel]" :style="{ backgroundImage: `url(${image})` }">
+    <div class="carousel-caption">
+      <h1>{{h1}}</h1>
+      <p>{{p}}</p>
+      <btn class="btn btn-primary">Formation</btn>
+      <button type="button" class="btn btn-outline-secondary">See More</button>
     </div>
+  </div>
 </template>
 
 <script>
 export default {
-  name : "slide" ,
-  props : ["h1" , "p" , "active" , "image" ] ,
+  name: "slide",
+  props: ["h1", "p", "active", "image"],
   data() {
     return {
-    carousel : "carousel-item  no-repeat" ,
-  }}
-
-}
+      carousel: "carousel-item  no-repeat"
+    };
+  }
+};
 </script>
 
 <style scoped>
@@ -31,7 +31,8 @@ export default {
   right: 0%;
   top: 35%;
   text-align: center;
-}.carousel-caption h1 {
+}
+.carousel-caption h1 {
   margin-top: -10vh;
   width: 80% !important;
   font-weight: bold;
