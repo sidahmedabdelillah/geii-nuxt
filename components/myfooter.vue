@@ -11,7 +11,7 @@
             <ul id="partners">
               <li>
                 <img src="https://medncom.com/wp-content/uploads/2017/11/Ooredoo-black.png" alt />
-                <img src="http://assets.stickpng.com/images/5842905ca6515b1e0ad75ab9.png" alt />
+                <img src="/orange.png" alt />
               </li>
               <li>
                 <img
@@ -23,7 +23,7 @@
                 />
               </li>
               <li>
-                <img src="http://assets.stickpng.com/images/58429064a6515b1e0ad75aba.png" alt />
+                <img src="/att.png" alt />
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/MIT_logo.svg/1280px-MIT_logo.svg.png"
                   alt
