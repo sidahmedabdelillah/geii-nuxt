@@ -49,9 +49,7 @@ export default {
     // called every time before loading the component
     return {
       id: params.id,
-      article: await $axios.$get(
-        `https://geii-backend.herokuapp.com/Articles/${params.id}`
-      )
+      article: await $axios.$get(`/Articles/${params.id}`)
     };
   },
   mounted() {

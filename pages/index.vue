@@ -20,13 +20,9 @@ import newssection from "@/components/home/newssection";
 export default {
   async asyncData({ $axios }) {
     return {
-      articles: await $axios.$get(
-        "https://geii-backend.herokuapp.com/Articles?_sort=createdAt:DESC"
-      ),
-      home_about: await $axios.$get(
-        "https://geii-backend.herokuapp.com/home-about"
-      ),
-      slides: await $axios.$get("https://geii-backend.herokuapp.com/slides")
+      articles: await $axios.$get("/Articles?_sort=createdAt:DESC"),
+      home_about: await $axios.$get("/home-about"),
+      slides: await $axios.$get("/slides")
     };
   },
   date: () => {
