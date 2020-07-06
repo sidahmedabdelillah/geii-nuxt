@@ -81,7 +81,7 @@ export default {
   async asyncData({ $axios }) {
     return {
       articles: await $axios.$get(
-        `/Articles?_sort=createdAt:DESC&_limit=6`
+        `https://geii-backend.herokuapp.com/Articles?_sort=createdAt:DESC&_limit=6`
       )
     };
   },
@@ -96,7 +96,7 @@ export default {
     async click() {
       this.number = this.number + 6;
       this.articles = await this.$axios.$get(
-        "/Articles?_sort=createdAt:DESC&_limit=" +
+        "https://geii-backend.herokuapp.com/Articles?_sort=createdAt:DESC&_limit=" +
           this.number
       );
       console.log(this.articles);
