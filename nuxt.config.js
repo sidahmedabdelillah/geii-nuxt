@@ -1,4 +1,4 @@
-const URI = "localhost:1338";
+const URI = "https://admin.geii.me/";
 const googleAuthID =
   "366986770967-cm1f8rg38ubercuqkqnfdodde0uesjnv.apps.googleusercontent.com";
 export default {
