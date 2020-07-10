@@ -23,7 +23,7 @@ export default {
 
 <style scoped>
 .carousel-item {
-  height: 100vh;
+  height: 60vh;
 }
 .carousel-caption {
   width: 80%;
