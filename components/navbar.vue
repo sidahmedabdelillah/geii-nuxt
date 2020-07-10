@@ -1,6 +1,6 @@
 <template>
   <div class="my-navbar">
-    <nav class="navbar navbar-expand-lg navbar-light  my-nav">
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top my-nav">
       <nuxt-link class="navbar-brand" to="/">
         <img src="../assets/logo.png" alt="LOGO" />
       </nuxt-link>

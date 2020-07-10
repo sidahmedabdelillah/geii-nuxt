@@ -1,8 +1,11 @@
 <template>
-  <div v-bind:class="[active , carousel]" :style="{ backgroundImage: `url(${image})` }">
+  <div
+    v-bind:class="[active, carousel]"
+    :style="{ backgroundImage: `url(${image})` }"
+  >
     <div class="carousel-caption">
-      <h1>{{h1}}</h1>
-      <p>{{p}}</p>
+      <h1>{{ h1 }}</h1>
+      <p>{{ p }}</p>
       <btn class="btn btn-primary">Formation</btn>
       <button type="button" class="btn btn-outline-secondary">See More</button>
     </div>
