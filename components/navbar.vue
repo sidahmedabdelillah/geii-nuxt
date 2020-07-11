@@ -38,16 +38,28 @@
               href
             >Formation</a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <nuxt-link to="#" class="dropdown-item">Telecome</nuxt-link>
-              <nuxt-link to="#" class="dropdown-item">System Embarqué</nuxt-link>
-              <nuxt-link to="#" class="dropdown-item">Automatisme</nuxt-link>
+              <nuxt-link to="/specialite/STR" class="dropdown-item">Telecome</nuxt-link>
+              <nuxt-link to="/specialite/SE" class="dropdown-item">System Embarqué</nuxt-link>
+              <nuxt-link to="/specialite/AUTO" class="dropdown-item">Automatisme</nuxt-link>
             </div>
           </li>
           <li class="nav-item">
             <nuxt-link to="#" class="nav-link">Recherche</nuxt-link>
           </li>
-          <li class="nav-item">
-            <nuxt-link class="nav-link" to="#">Members</nuxt-link>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              href
+            >Membres</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <nuxt-link to="/members/prof" class="dropdown-item">Prof</nuxt-link>
+              <nuxt-link to="/" class="dropdown-item">Access Etudiant</nuxt-link>
+            </div>
           </li>
           <li class="nav-item">
             <nuxt-link class="nav-link" to="#">Contact</nuxt-link>
