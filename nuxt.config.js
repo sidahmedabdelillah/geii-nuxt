@@ -107,6 +107,7 @@ export default {
     "@nuxtjs/proxy",
     // Doc: https://github.com/nuxt-community/dotenv-module
     "@nuxtjs/dotenv",
+    "@nuxtjs/markdownit",
     [
       "nuxt-fontawesome",
       {
@@ -143,5 +144,8 @@ export default {
      ** You can extend webpack config here
      */
     extend(config, ctx) {}
+  },
+  markdownit: {
+    injected: true
   }
 };
