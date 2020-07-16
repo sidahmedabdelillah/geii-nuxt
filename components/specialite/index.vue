@@ -75,7 +75,7 @@
           <div class="row align-items-end">
             <div class="mission">
               <h1>Notre mission</h1>
-              <div v-html="$md.render(item.Notre_mission)"></div>
+              <div v-html="$md.render(specialite.Notre_mission)"></div>
             </div>
           </div>
         </div>
