@@ -67,7 +67,7 @@
                 {{item.tittle}}
               </h1>
               <p>
-                {{item.text}}
+                  <div v-html="$md.render(item.paragraph)"></div>
               </p>
             </div>
           </div>
@@ -75,13 +75,7 @@
           <div class="row align-items-end">
             <div class="mission">
               <h1>Notre mission</h1>
-              <p>Doter les eleve dune capitale de connaissance  dune demarch qui leur permet de :
-                <ul>
-                  <li>Lancer des projet PME PMI</li>
-                  <li>Integre des etreproise industruel</li>
-                  <li>Acceder au departement recherch</li>
-                </ul>
-               </p>
+              <div v-html="$md.render(item.Notre_mission)"></div>
             </div>
           </div>
         </div>
