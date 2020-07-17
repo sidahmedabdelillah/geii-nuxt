@@ -17,7 +17,7 @@
       </button>
 
       <div class="collapse navbar-collapse go-right" id="navbarSupportedContent">
-        <ul class="navbar-nav go-right">
+        <ul class="navbar-nav">
           <li class="nav-item">
             <nuxt-link class="nav-link" to="/">
               Home
@@ -86,6 +86,18 @@ export default {
 };
 </script>
 <style scoped>
+.dropdown:hover > .dropdown-menu {
+  display: block;
+  background: rgba(0, 0, 0, 0.6) !important;
+  z-index: 100;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.9 rem;
+  letter-spacing: 0.1 rem;
+  border-radius: 0;
+  top: 100%;
+}
+
 * {
   /*overflow-x: hidden;*/
   color: #505962;
@@ -124,7 +136,7 @@ export default {
 }
 
 .navbar-brand {
-  height: 4 rem;
+  height: 3.5 rem;
 }
 .nuxt-link-exact-active {
   color: #f04b4c !important;
@@ -142,7 +154,7 @@ a {
 }
 
 .navbar-brand img {
-  height: 3.5rem;
+  height: 2.5rem;
   padding: 0;
   margin: 0;
 }
@@ -156,8 +168,10 @@ a {
 }
 
 .go-right {
-  justify-content: right;
+  justify-content: right !important;
+  justify-self: right !important;
   color: white !important;
+  flex-direction: row-reverse;
 }
 
 .show .show {
