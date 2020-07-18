@@ -326,7 +326,7 @@ dd {
   color: var(--paragraph-tittle-color);
   margin-bottom: 1.4rem;
   position: relative;
-  font-size: 3vw;
+  font-size: 2rem;
   font-weight: 600;
 }
 .paragraph h1::after {
