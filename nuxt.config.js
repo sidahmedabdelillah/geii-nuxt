@@ -28,38 +28,8 @@ export default {
       {
         rel: "stylesheet",
         type: "text/css",
-        href: "./vendor/mdi-font/css/material-design-iconic-font.min.css"
-      },
-      {
-        rel: "stylesheet",
-        type: "text/css",
-        href: "./vendor/font-awesome-4.7/css/font-awesome.min.css"
-      },
-      {
-        rel: "stylesheet",
-        type: "text/css",
         href:
-          "./https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
-      },
-      {
-        rel: "stylesheet",
-        type: "text/css",
-        href: "./vendor/select2/select2.min.css"
-      },
-      {
-        rel: "stylesheet",
-        type: "text/css",
-        href: "./vendor/datepicker/daterangepicker.css"
-      },
-      {
-        rel: "stylesheet",
-        type: "text/css",
-        href: "./css.css"
-      },
-      {
-        rel: "stylesheet",
-        type: "text/css",
-        href: "./all.css"
+          "https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
       },
       {
         rel: "stylesheet",
@@ -69,10 +39,6 @@ export default {
       }
     ],
     script: [
-      {
-        src:
-          "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-      },
       { src: "https://code.jquery.com/jquery-3.3.1.slim.min.js" },
       {
         src:
