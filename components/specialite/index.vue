@@ -358,6 +358,7 @@ dd {
   max-width: 33.333333%;
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
   justify-content: end;
 }
 .con {
