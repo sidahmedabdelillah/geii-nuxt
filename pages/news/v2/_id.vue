@@ -4,11 +4,7 @@
       <div class="col col-md-8">
         <div class="article-container">
           <div class="image-header">
-            <img
-              class="fixed-size"
-              src="https://colorlib.com/preview/theme/videomag/img/bg-img/37.jpg"
-              alt
-            />
+            <img class="fixed-size" :src="article.Picture.url" alt />
           </div>
           <div class="article-header">
             <h2>{{article.Title}}</h2>
