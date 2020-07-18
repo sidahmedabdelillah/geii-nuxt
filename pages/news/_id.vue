@@ -34,7 +34,7 @@
           <!-- post content -->
           <div class="section-row">
             <h3>{{article.Title}}</h3>
-            <p v-for="p in getparagraph()" :key="p[20]">{{p}}</p>
+            <div v-html="$md.render(article.Paragraph)"></div>
           </div>
           <!-- /post content -->
         </div>
@@ -56,17 +56,6 @@ export default {
     //console.log(this.article.Paragraph.split("\n").shift());
   },
   methods: {
-    getparagraph() {
-      const paragraph = this.article.Paragraph.split("\n");
-      let ne = [];
-      for (let i = 0; i < paragraph.length; i++) {
-        if (paragraph[i] != "") {
-          ne.push(paragraph[i]);
-        }
-      }
-      console.log(ne);
-      return ne;
-    },
     getdate() {
       var date = this.article.createdAt.substring(0, 9);
       const mounths = [
