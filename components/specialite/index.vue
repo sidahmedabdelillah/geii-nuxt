@@ -62,15 +62,19 @@
       <div class="container">
         <div class="row">
           <img :src="body_image" alt class="background-image" />
-          <div class="col col-md-8">
+          <div class="col col-md-8 col-sm-12">
             <div class="paragraph" v-for="item in specialite.paragraphs" :key="item.title">
               <h1>{{item.tittle}}</h1>
 
               <div class="myp" v-html="render(item.paragraph)"></div>
             </div>
+            <div class="paragraph con">
+              <h1>Notre mission</h1>
+              <div v-html="$md.render(specialite.Notre_mission)"></div>
+            </div>
           </div>
 
-          <div class="row align-items-end">
+          <div class="col-md-4 my-flex">
             <div class="mission">
               <h1>Notre mission</h1>
               <div v-html="$md.render(specialite.Notre_mission)"></div>
@@ -350,9 +354,26 @@ dd {
   border-radius: 5%;
   margin: 1rem;
 }
+.my-flex {
+  max-width: 33.333333%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+.con {
+  display: none;
+}
 @media (max-width: 800px) {
   .background-image {
     display: none;
   }
+  .my-flex {
+    display: none;
+  }
+  .con {
+    display: block;
+  }
+}
+@media (max-width: 600px) {
 }
 </style>
