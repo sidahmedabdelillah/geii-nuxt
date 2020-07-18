@@ -84,9 +84,9 @@
 
 <script>
 export default {
-  //head() {
-  //  return { link: [{ rel: "stylesheet", href: "/css/specialite/style.css" }] };
-  //},
+  head() {
+    return { link: [{ rel: "stylesheet", href: "/css/specialite/style.css" }] };
+  },
   props: [
     "tittle_color",
     "border_color",
