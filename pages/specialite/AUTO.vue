@@ -18,6 +18,24 @@
 import specialite from "@/components/specialite/index";
 export default {
   async asyncData({ $axios }) {
+    const special_1_1 = await $axios.$get(
+      "/module-autos?Anne=Premiere_annee&Semestre=Premier"
+    );
+    const special_1_2 = await $axios.$get(
+      "/module-autos?Anne=Premiere_annee&Semestre=Deuxieme"
+    );
+    const special_2_1 = await $axios.$get(
+      "/module-autos?Anne=Deuxieme_annee&Semestre=Premier"
+    );
+    const special_2_2 = await $axios.$get(
+      "/module-autos?Anne=Deuxieme_annee&Semestre=Deuxieme"
+    );
+    const special_3_1 = await $axios.$get(
+      "/module-autos?Anne=Troisieme_annee&Semestre=Premier"
+    );
+    const special_3_2 = await $axios.$get(
+      "/module-autos?Anne=Troisieme_annee&Semestre=Deuxieme"
+    );
     return {
       specialite: await $axios.$get("/auto")
     };

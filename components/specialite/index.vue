@@ -7,8 +7,8 @@
           <div class="col">
             <div class="tittle">
               <p class="tittle-top">Ing et master</p>
-              <h1 class="tittle-h1">{{header_tittle}}</h1>
-              <p class="tittle-text">{{specialite.discription}}</p>
+              <h1 class="tittle-h1">{{ header_tittle }}</h1>
+              <p class="tittle-text">{{ specialite.discription }}</p>
               <a class="tittle-btn" href>
                 Telecharger Pdf
                 <i class="fas fa-cloud-download-alt"></i>
@@ -63,8 +63,12 @@
         <div class="row">
           <img :src="body_image" alt class="background-image" />
           <div class="col col-md-8 col-sm-12">
-            <div class="paragraph" v-for="item in specialite.paragraphs" :key="item.title">
-              <h1>{{item.tittle}}</h1>
+            <div
+              class="paragraph"
+              v-for="item in specialite.paragraphs"
+              :key="item.title"
+            >
+              <h1>{{ item.tittle }}</h1>
 
               <div class="myp" v-html="render(item.paragraph)"></div>
             </div>
@@ -83,13 +87,30 @@
         </div>
       </div>
     </section>
+    <div class="container">
+      <div class="paragraph">
+        <h1>Programme et Module</h1>
+        <programme
+          :special_1_1="special_1_1"
+          :special_1_2="special_1_2"
+          :special_2_1="special_2_1"
+          :special_2_2="special_2_2"
+          :special_3_1="special_3_1"
+          :special_3_2="special_3_2"
+        ></programme>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import programme from "./programme.vue";
 export default {
   head() {
     return { link: [{ rel: "stylesheet", href: "/css/specialite/style.css" }] };
+  },
+  components: {
+    programme
   },
   props: [
     "tittle_color",
@@ -102,7 +123,13 @@ export default {
     "side_image",
     "splash_image",
     "body_image",
-    "specialite"
+    "specialite",
+    "special_1_1",
+    "special_2_1",
+    "special_3_1",
+    "special_1_2",
+    "special_2_2",
+    "special_3_2"
   ],
   methods: {
     render(item) {
@@ -131,7 +158,7 @@ export default {
 };
 </script>
 
-<style scoped >
+<style scoped>
 .colored {
   color: red;
 }
