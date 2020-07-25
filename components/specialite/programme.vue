@@ -2,17 +2,17 @@
   <div>
     <div class="row">
       <div class="col" id="col">
-        <button class="btn btn-success" @click="select(1)">
+        <button class="btn btn-success">
           1ére Année
         </button>
       </div>
       <div class="col" id="col">
-        <button class="btn btn-secondary" @click="select(2)">
+        <button class="btn btn-secondary">
           2eme Année
         </button>
       </div>
       <div class="col" id="col">
-        <button class="btn btn-primary" @click="select(3)">
+        <button class="btn btn-primary">
           3eme Année
         </button>
       </div>
@@ -119,15 +119,15 @@ export default {
   },
   methods: {
     select(n) {
-      if (n == 1) {
+      if (n == "1") {
         this.selected1 = this.special_1_1;
         this.selected2 = this.special_1_2;
       }
-      if (n == 2) {
+      if (n == "2") {
         this.selected1 = this.special_2_1;
         this.selected2 = this.special_2_2;
       }
-      if (n == 3) {
+      if (n == "3") {
         this.selected1 = this.special_3_1;
         this.selected2 = this.special_3_2;
       }

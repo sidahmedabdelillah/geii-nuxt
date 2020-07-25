@@ -16,7 +16,10 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse go-right" id="navbarSupportedContent">
+      <div
+        class="collapse navbar-collapse go-right"
+        id="navbarSupportedContent"
+      >
         <ul class="navbar-nav">
           <li class="nav-item">
             <nuxt-link class="nav-link" to="/">
@@ -36,11 +39,18 @@
               aria-haspopup="true"
               aria-expanded="false"
               href
-            >Formation</a>
+              >Formation</a
+            >
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <nuxt-link to="/specialite/STR" class="dropdown-item">Telecome</nuxt-link>
-              <nuxt-link to="/specialite/SE" class="dropdown-item">System Embarqué</nuxt-link>
-              <nuxt-link to="/specialite/AUTO" class="dropdown-item">Automatisme</nuxt-link>
+              <nuxt-link to="/specialite/STR" class="dropdown-item"
+                >Telecome</nuxt-link
+              >
+              <nuxt-link to="/specialite/SE" class="dropdown-item"
+                >System Embarqué</nuxt-link
+              >
+              <nuxt-link to="/specialite/AUTO" class="dropdown-item"
+                >Automatisme</nuxt-link
+              >
             </div>
           </li>
           <li class="nav-item">
@@ -55,10 +65,15 @@
               aria-haspopup="true"
               aria-expanded="false"
               href
-            >Membres</a>
+              >Membres</a
+            >
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <nuxt-link to="/members/prof" class="dropdown-item">Prof</nuxt-link>
-              <nuxt-link to="/" class="dropdown-item">Access Etudiant</nuxt-link>
+              <nuxt-link to="/members/prof" class="dropdown-item"
+                >Prof</nuxt-link
+              >
+              <nuxt-link to="/" class="dropdown-item"
+                >Access Etudiant</nuxt-link
+              >
             </div>
           </li>
           <li class="nav-item">
@@ -76,8 +91,12 @@
 </template>
 
 <script>
+import navbartop from "./nav-top";
 export default {
   name: "navbar",
+  components: {
+    navbartop
+  },
   methods: {
     login() {
       this.$auth.loginWith("google");

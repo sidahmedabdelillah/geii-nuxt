@@ -13,7 +13,7 @@
               </nuxt-link>
               <div class="post-body">
                 <h3 class="post-title title-lg">
-                  <a>{{articles[0].Title}}</a>
+                  <a>{{ articles[0].Title }}</a>
                 </h3>
               </div>
             </div>
@@ -27,7 +27,7 @@
               </nuxt-link>
               <div class="post-body">
                 <h3 class="post-title">
-                  <a href="blog-post.html">{{articles[1].Title}}</a>
+                  <a href="blog-post.html">{{ articles[1].Title }}</a>
                 </h3>
               </div>
             </div>
@@ -40,7 +40,7 @@
               </nuxt-link>
               <div class="post-body">
                 <h3 class="post-title">
-                  <a href>{{articles[1].Title}}</a>
+                  <a href>{{ articles[1].Title }}</a>
                 </h3>
               </div>
             </div>
@@ -80,9 +80,7 @@ import myfooter from "@/components/myfooter";
 export default {
   async asyncData({ $axios }) {
     return {
-      articles: await $axios.$get(
-        `/Articles?_sort=createdAt:DESC&_limit=6`
-      )
+      articles: await $axios.$get(`/Articles?_sort=createdAt:DESC&_limit=6`)
     };
   },
   data() {
@@ -96,8 +94,7 @@ export default {
     async click() {
       this.number = this.number + 6;
       this.articles = await this.$axios.$get(
-        "/Articles?_sort=createdAt:DESC&_limit=" +
-          this.number
+        "/Articles?_sort=createdAt:DESC&_limit=" + this.number
       );
       console.log(this.articles);
       console.log(this.number);
@@ -115,26 +112,6 @@ export default {
 </script>
 
 <style scoped>
-body {
-  font-family: "Muli", sans-serif;
-  font-size: 16px;
-  color: #505050;
-  font-weight: 400;
-  overflow-x: hidden;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Montserrat", sans-serif;
-  color: #11151c;
-  font-weight: 700;
-  margin: 0px 0px 15px;
-}
-
 h1 {
   font-size: 32.437px;
 }
@@ -311,12 +288,6 @@ figure > figcaption {
 }
 .fixocl > img {
   max-height: 30vh !important;
-}
-
-.post-img:hover > img {
-  -webkit-transform: scale(1.2);
-  -ms-transform: scale(1.2);
-  transform: scale(1.2);
 }
 
 .post .post-title {
