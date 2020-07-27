@@ -4,7 +4,7 @@
     :style="{ backgroundImage: `url(${image})` }"
   >
     <div class="carousel-caption">
-      <nuxt-link :to="link">
+      <nuxt-link :to="link" class="carousel-link">
         <h1>{{ h1 }}</h1>
         <p>{{ p }}</p>
       </nuxt-link>
@@ -83,5 +83,9 @@ export default {
 .btn-outline-secondary:hover {
   color: black !important;
   background-color: white !important;
+}
+.carousel-link:hover {
+  text-decoration: none;
+  opacity: 0.8;
 }
 </style>
