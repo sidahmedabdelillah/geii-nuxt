@@ -3,12 +3,12 @@
     v-bind:class="[active, carousel]"
     :style="{ backgroundImage: `url(${image})` }"
   >
-    <nuxt-link :to="link">
-      <div class="carousel-caption">
+    <div class="carousel-caption">
+      <nuxt-link :to="link">
         <h1>{{ h1 }}</h1>
         <p>{{ p }}</p>
-      </div>
-    </nuxt-link>
+      </nuxt-link>
+    </div>
   </div>
 </template>
 
