@@ -10,24 +10,34 @@
             <h1>Partners</h1>
             <ul id="partners">
               <li>
-                <img src="https://medncom.com/wp-content/uploads/2017/11/Ooredoo-black.png" alt />
-                <img src="/orange.png" alt />
+                <a target="_blank" href="https://www.ulaval.ca/en/">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/en/thumb/9/90/Ulaval_Shield.svg/175px-Ulaval_Shield.svg.png"
+                    alt
+                  />
+                </a>
               </li>
               <li>
-                <img
-                  src="https://w7.pngwing.com/pngs/920/617/png-transparent-huawei-sydney-business-zte-%E5%8D%8E%E4%B8%BA-sydney.png"
-                />
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Logo_Alg%C3%A9rie_T%C3%A9l%C3%A9com.svg/1200px-Logo_Alg%C3%A9rie_T%C3%A9l%C3%A9com.svg.png"
-                  alt
-                />
+                <a target="_blank" href="https://www.uphf.fr/">
+                  <img
+                    src="https://lh3.googleusercontent.com/proxy/IG7flVgfKwP-prGZ7pN3zFwaSP2RKKBNuUSWm8J6zJIWLT-W7uu7w0I8Gc0gMlmuMdhBreWTIZ3QFEoN93gnZc1fhA5jhXins93lQA"
+                    alt
+                  />
+                </a>
               </li>
               <li>
-                <img src="/att.png" alt />
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/MIT_logo.svg/1280px-MIT_logo.svg.png"
-                  alt
-                />
+                <a href="https://www.umc.edu.dz/index.php/en/" target="_blanc">
+                  <img
+                    src="https://www.umc.edu.dz//images/headers/logoufmc1new3languearenfr.png"
+                    alt=""
+                /></a>
+              </li>
+              <li>
+                <a href="https://escolaeuropea.eu/" target="_blanc">
+                  <img
+                    src="https://www.escolaeuropea.eu/wp-content/uploads/2018/03/logo-blanc-2e3s-300x250.png"
+                    alt=""
+                /></a>
               </li>
             </ul>
           </div>
@@ -37,14 +47,15 @@
           >
             <h1>Contact</h1>
             <p>
-              <font-awesome-icon :icon="['fas', 'map-marker-alt']" />Dergana , Alger , min
-              jihet khamej ou bnin
+              <i id="small" class="fas fa-map-marker-alt"></i>ENST Cité
+              Diplomatique Ex Centre Biomédical Dergana-Bordj El Kiffan-
             </p>
             <p>
-              <font-awesome-icon :icon="['fas', 'phone']" />Phone: (+213) 78 29 83 435
+              <i id="small" class="fas fa-phone"></i><bold>Phone:</bold>
+              (+213) 78 29 83 435
             </p>
             <p>
-              <font-awesome-icon :icon="['fas', 'envelope']" />Email:
+              <i class="fas fa-envelope" id="small"></i>Email:
               <a href="mailto:hello@domain.com">geii@enst.dz</a>
             </p>
           </div>
@@ -55,13 +66,16 @@
             <h1>Follow us</h1>
             <p>
               <a href="#">
-                <font-awesome-icon :icon="['fab', 'facebook']" />
+                <i class="fab fa-facebook"></i>
               </a>
               <a href="#">
-                <font-awesome-icon :icon="['fab', 'google-plus-g']" />
+                <i class="fab fa-google "></i>
               </a>
-              <a href="#">
-                <font-awesome-icon :icon="['fab', 'youtube']" />
+              <a
+                target="_blanc"
+                href="https://www.youtube.com/channel/UCq8M4rEJ1bQRRjZYng8CQyA/channels"
+              >
+                <i class="fab fa-youtube"></i>
               </a>
             </p>
           </div>
@@ -153,6 +167,7 @@ img {
 }
 .footer-contact p {
   word-wrap: break-word;
+  margin: 2rem 0;
 }
 .footer-contact font-awesome-icon {
   padding-right: 10px;
@@ -181,13 +196,22 @@ img {
   border: 0;
 }
 #partners {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   list-style: none;
   padding: 0 !important;
-  align-content: space-evenly;
 }
-#partners li img {
-  width: 10vw;
+#partners li {
+  margin: 0 1rem 1rem 0;
+}
+#partners li a img {
+  height: 100px;
+}
+i {
+  font-size: 3rem;
+}
+#small {
+  font-size: 1.3rem;
+  margin-right: 1rem;
 }
 </style>

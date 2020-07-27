@@ -3,19 +3,19 @@
     v-bind:class="[active, carousel]"
     :style="{ backgroundImage: `url(${image})` }"
   >
-    <div class="carousel-caption">
-      <h1>{{ h1 }}</h1>
-      <p>{{ p }}</p>
-      <btn class="btn btn-primary">Formation</btn>
-      <button type="button" class="btn btn-outline-secondary">See More</button>
-    </div>
+    <nuxt-link :to="link">
+      <div class="carousel-caption">
+        <h1>{{ h1 }}</h1>
+        <p>{{ p }}</p>
+      </div>
+    </nuxt-link>
   </div>
 </template>
 
 <script>
 export default {
   name: "slide",
-  props: ["h1", "p", "active", "image"],
+  props: ["h1", "p", "active", "image", "link"],
   data() {
     return {
       carousel: "carousel-item  no-repeat"

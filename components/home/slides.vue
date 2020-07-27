@@ -19,12 +19,13 @@
     <!---caroussel inner-->
     <div class="carousel-inner" role="listbox">
       <slide1
-        v-for="(s,index) in slides "
+        v-for="(s, index) in slides"
         :key="s.id"
         :p="s.Paragraph"
         :h1="s.Title"
-        :active="{ 'active': index === 0 }"
+        :active="{ active: index === 0 }"
         :image="s.Picture.url"
+        :link="s.link"
       ></slide1>
     </div>
     <!---carousel inner end -->
