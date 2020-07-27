@@ -4,19 +4,25 @@
       <div class="col-md-8" style="padding : 0">
         <div class="list-container">
           <div class="row" style="margin: 10px 0;">
-            <div class="col-md-8" style="padding : 0">
+            <div class="col-md-7" style="padding : 0">
               <div class="search__container">
-                <input class="search__input" type="text" placeholder="Search" />
+                <input
+                  class="search__input"
+                  type="text"
+                  placeholder="Search"
+                  v-model="query"
+                />
               </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-5">
               <div class="selector">
-                <select required>
-                  <option value="1">No Filter selected</option>
-                  <option value="2">Maitre de conference A</option>
-                  <option value="3">Maitre de conference B</option>
-                  <option value="4">Autre Type</option>
-                  <option value="5">Autre Type</option>
+                <select required v-model="filter">
+                  <option value="1" selected>No Filter selected</option>
+                  <option value="2">Professeur</option>
+                  <option value="3">Maitre de conference A</option>
+                  <option value="4">Maitre de conference B</option>
+                  <option value="5">Maitre Assistant A</option>
+                  <option value="6">Maitre Assistant B</option>
                 </select>
               </div>
             </div>
@@ -38,13 +44,18 @@
                 </thead>
                 <tbody>
                   <tr
-                    v-for="user in users"
-                    :key="user.id"
+                    v-for="user in listOfUsers"
+                    :key="user.id || this.item.id"
                     @click="selected = user"
                   >
                     <td>{{ user.prof_info.Full_name }}</td>
                     <td>{{ user.prof_info.Fonction_actuel }}</td>
                     <td>{{ user.email }}</td>
+                  </tr>
+                  <tr v-if="listOfUsers.length == 0">
+                    <td colspan="3" style="text-align : center">
+                      Aucun element correspend a vos cherche
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -72,7 +83,10 @@
           <div class="my-card-body">
             <h5>{{ selected.prof_info.Fonction_actuel }}</h5>
             <ul>
-              <li><i class="fas fa-university"></i>Phd in Something Robotic</li>
+              <li>
+                <i class="fas fa-university"></i
+                >{{ selected.prof_info.Specialite }}
+              </li>
               <li><i class="fas fa-at"></i>{{ selected.email }}</li>
               <li>
                 <i class="fas fa-building" v-if="selected.prof_info.Bureau"></i
@@ -83,10 +97,11 @@
         </div>
       </div>
     </div>
-  </div></template
->
+  </div>
+</template>
 
 <script>
+import Fuse from "fuse.js";
 export default {
   head() {
     return {
@@ -105,14 +120,63 @@ export default {
   },
   async asyncData({ $axios }) {
     const users = await $axios.$get(`/users/Teachers/`);
+    const options = {
+      includeScore: true,
+      threshold: 0.2,
+      // Search in `author` and in `tags` array
+      keys: [
+        "email",
+        "prof_info.Full_name",
+        "prof_info.Grade",
+        "prof_info.Specialite"
+      ]
+    };
     return {
-      users
+      users,
+      options
     };
   },
   data: function() {
     return {
-      selected: null
+      selected: null,
+      query: "",
+      filter: "1"
     };
+  },
+
+  // TODO change the selection in the backend to an enumiratore
+  computed: {
+    listOfUsers() {
+      let fuze = new Fuse(this.filteredUsers, this.options);
+
+      if (this.query == "" || this.query == null) {
+        return this.filteredUsers;
+      }
+      let result = fuze.search(this.query);
+      let userss = result.map(item => {
+        return { ...item.item };
+      });
+      return userss;
+    },
+    filteredUsers() {
+      const list = [
+        "Professeur",
+        "Maitre de conference A",
+        "Maitre de conference B",
+        "Maitre Assistant A",
+        "Maitre Assistant B"
+      ];
+      if (+this.filter == 1) {
+        return this.users;
+      } else {
+        const userp = this.users.filter(item => {
+          if (list[+this.filter - 2] === item.prof_info.Grade) {
+            return true;
+          }
+        });
+        return userp;
+      }
+    }
   }
 };
 </script>

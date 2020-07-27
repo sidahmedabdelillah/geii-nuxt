@@ -112,7 +112,7 @@ export default {
       user: await $axios.$get(`/users/Teachers/${params.id}`),
       id: params.id
     };
-  },
+      },
   components: {
     top,
     Enseignement,

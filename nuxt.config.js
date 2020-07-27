@@ -73,6 +73,7 @@ export default {
     "@nuxtjs/proxy",
     // Doc: https://github.com/nuxt-community/dotenv-module
     "@nuxtjs/dotenv",
+
     "@nuxtjs/markdownit",
     [
       "nuxt-fontawesome",

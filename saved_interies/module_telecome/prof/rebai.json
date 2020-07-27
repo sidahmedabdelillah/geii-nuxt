@@ -9,9 +9,8 @@
       },
       {
         "Anne": "2019-2020",
-        "Enseignement": "kch wa7din master ",
-        "Autre": "",
-        "Specialite": "Auto ING-1"
+        "Enseignement": "Systeme Asservis Linéaires et continue 2 ",
+        "Specialite": "Auto ING-2"
       }
     ],
     "encadrements": [
@@ -26,15 +25,15 @@
     "projet_recherches": [
       {
         "Tittre": "Projet 1",
-        "Mot_cle": "ha projet w say",
-        "Anne": "bkri",
-        "url": "kch site"
+        "Mot_cle": "Some project",
+        "Anne": "2020-2021",
+        "url": "website"
       },
       {
         "Tittre": "Projet 2",
-        "Mot_cle": "ha projet w say",
-        "Anne": "bkri",
-        "url": "kch site"
+        "Mot_cle": "Some project",
+        "Anne": "2020-2021",
+        "url": "website"
       }
     ],
     "communications": [
