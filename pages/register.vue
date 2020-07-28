@@ -22,7 +22,13 @@
           </div>
           <div class="row align-items-center mt-4">
             <div class="col">
-              <input v-model="email" type="email" class="form-control" required placeholder="Email" />
+              <input
+                v-model="email"
+                type="email"
+                class="form-control"
+                required
+                placeholder="Email"
+              />
             </div>
           </div>
           <div class="row align-items-center mt-4">
@@ -64,7 +70,7 @@
               <div id="error"></div>
             </div>
           </div>
-          <div v-if="student">
+          <div>
             <div class="row align-items-center mt-4">
               <div class="col">
                 <select v-model="year" id="inputState" class="form-control">
@@ -75,25 +81,39 @@
                 </select>
               </div>
               <div class="col">
-                <select v-model="specialite" id="inputState" class="form-control">
-                  <option selected="selected">Système de Télécommunications & Réseaux</option>
+                <select
+                  v-model="specialite"
+                  id="inputState"
+                  class="form-control"
+                >
+                  <option selected="selected"
+                    >Système de Télécommunications & Réseaux</option
+                  >
                   <option>Automatique & Informatique Industrielle</option>
                   <option>Système embarqué</option>
                 </select>
               </div>
             </div>
           </div>
-          <div class="alertcontainer">
-            <div class="alert alert-danger" role="alert" v-for="er in error" :key="er[0]">{{er}}</div>
-          </div>
+
           <div class="row  mt-4">
             <div class="col justify-content-space-around">
               <button v-if="loading" class="btn btn-primary">
                 <span class="spinner-border spinner-border-sm"></span>
                 Loading..
               </button>
-                  <button v-else @click.prevent="register" class="btn btn-primary mt-4">Continue</button>
-                  <nuxt-link to="login"><button  class="btn btn-warning mt-4 text-right">Se Connecter</button></nuxt-link>
+              <button
+                v-else
+                @click.prevent="register"
+                class="btn btn-primary mt-4"
+              >
+                Continue
+              </button>
+              <nuxt-link to="login"
+                ><button class="btn btn-warning mt-4 text-right">
+                  Se Connecter
+                </button></nuxt-link
+              >
             </div>
           </div>
         </div>
@@ -114,8 +134,8 @@ export default {
       username: "",
       email: "",
       password: "",
-      year: "",
-      specialite: "",
+      year: "1ère année Ing",
+      specialite: "Système de Télécommunications & Réseaux",
       fullname: "",
       passwordco: "",
       student: false,
@@ -129,76 +149,37 @@ export default {
       this.error = [];
       //email check
       if (!this.email.includes("@enst.dz")) {
-        if (!this.error.includes("inscription avec email @enst.dz")) {
-          this.error.push("inscription avec email @enst.dz");
-        }
-      } else {
-        var indexofemail = this.error.indexOf(
-          "inscription avec email @enst.dz"
-        );
-        if (indexofemail >= 0) {
-          this.error.splice(indexofemail, 1);
-        }
-
-        console.log(indexofemail);
+        this.error.push("inscription avec email @enst.dz");
       }
-
       //password check
       if (
         this.password !== this.passwordco ||
         this.password == "" ||
         this.passwordco == ""
       ) {
-        if (!this.error.includes("passwords must match")) {
-          this.error.push("passwords must match");
-        }
-      } else {
-        var indexofpass = this.error.indexOf("passwords must match");
-        if (indexofpass >= 0) {
-          this.error.splice(indexofpass, 1);
-        }
+        this.error.push("passwords must match");
       }
 
       // username check
       if (this.username == "") {
-        if (!this.error.includes("user name is required")) {
-          this.error.push("user name is required");
-        }
-      } else {
-        let indexofuser = this.error.indexOf("user name is required");
-        if (indexofuser >= 0) {
-          this.error.splice(indexofuser, 1);
-        }
+        this.error.push("user name is required");
       }
 
       // fullname check
 
-      if (this.username == "") {
-        if (!this.error.includes("full name is required")) {
-          this.error.push("full name is required");
-        }
-      } else {
-        let indexofuser = this.error.indexOf("full name is required");
-        if (indexofuser >= 0) {
-          this.error.splice(indexofuser, 1);
-        }
+      if (this.fullname == "") {
+        this.error.push("full name is required");
       }
-
-      console.log(
-        "the length of the error is " + this.error.length + "+++  " + this.error
-      );
-      if (this.error.length == 0) {
-        if (this.email[1] == "_") {
-          if (!this.student) {
-            this.student = true;
-          } else {
-            if (this.fullname !== "") {
-              this.studentregister();
-            }
-          }
-        } else {
-          this.profregister();
-        }
+      if (this.error.length > 0) {
+        let self = this;
+        this.error.forEach(function(item) {
+          self.$toast.error(item);
+        });
+      } else {
+        this.loading = true;
+        this.studentregister();
+        this.loading = false;
+        this.$router.push("/");
       }
     },
 
@@ -210,34 +191,19 @@ export default {
         role: "student",
         info: {
           Year: this.year,
-          Full_name:  this.fullname,
+          Full_name: this.fullname,
           Specialite: this.specialite
         }
       };
 
-      this.posttoserver(newstudent);
+      this.postToServer(newstudent);
     },
 
-    profregister() {
-      const newprof = {
-        username: this.username,
-        password: this.password,
-        email: this.email,
-        role: "prof",
-        info: {
-          year: 4,
-          fullname: this.fullname,
-          specialite: "all"
-        }
-      };
-      this.posttoserver(newprof);
-    },
-
-    async posttoserver(newuser) {
+    async postToServer(newuser) {
       try {
         this.loading = true;
         respond = await this.$axios.post(
-          "/auth/local/register1",
+          "/auth/local/registerStudent",
           newuser
         );
         if (respond.status == 200) {
@@ -247,10 +213,6 @@ export default {
             loggedIn: true,
             userinfo: respond.data.user.userinfo
           };
-          this.$store.commit("user/set", loggeduser);
-          this.$axios.setToken(loggeduser.token, "Bearer");
-          this.loading = false;
-          this.$router.push("/");
         }
       } catch (error) {
         this.loading = false;
@@ -264,7 +226,7 @@ export default {
 </script>
 
 <style scoped>
-.justify-content-space-around{
+.justify-content-space-around {
   display: flex;
   justify-content: space-between;
 }

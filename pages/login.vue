@@ -30,24 +30,31 @@
               />
             </div>
           </div>
-          <div class="alertcontainer">
-            <div class="alert alert-danger" role="alert" v-for="er in error" :key="er[0]">{{er}}</div>
-          </div>
+
           <div class="row justify-content-start mt-4">
             <div class="col  justify-content-space-around">
               <button v-if="loading" class="btn btn-primary mt-4">
                 <span class="spinner-border spinner-border-sm"></span>
                 Loading..
               </button>
-              <button v-else @click.prevent="login" class="btn btn-primary mt-4">Se connecter</button>
-              <nuxt-link to="login"><button  class="btn btn-warning mt-4 text-right">S'insecrit</button></nuxt-link>
+              <button
+                v-else
+                @click.prevent="login"
+                class="btn btn-primary mt-4"
+              >
+                Se connecter
+              </button>
+              <nuxt-link to="login"
+                ><button class="btn btn-warning mt-4 text-right">
+                  S'insecrit
+                </button></nuxt-link
+              >
             </div>
           </div>
         </div>
       </div>
     </div>
   </form>
-</template>
 </template>
 
 <script>
@@ -61,7 +68,7 @@ export default {
     };
   },
   methods: {
-    login() {
+    async login() {
       this.error = [];
       if (this.identifier == "") {
         this.error.push("Identifier is required");
@@ -69,48 +76,39 @@ export default {
       if (this.password == "") {
         this.error.push("Password is required");
       }
-      if (this.error.length == 0) {
-        this.postlogin();
+      if (this.error.length > 0) {
+        let self = this;
+        this.error.forEach(function(item) {
+          self.$toast.error(item);
+        });
+      } else {
+        try {
+          this.loading = true;
+          await this.$strapi.login({
+            identifier: this.identifier,
+            password: this.password
+          });
+          this.loading = false;
+          this.$router.push("/");
+        } catch (e) {
+          this.loading = false;
+        }
       }
     },
 
-    async postlogin() {
-      const user = {
-        identifier: this.identifier,
-        password: this.password
-      };
-      try {
-        this.loading = true;
-        const respond = await this.$axios.post(
-          "/auth/local/",
-          user
-        );
-
-        if (respond.status == 200) {
-          const loggeduser = {
-            username: respond.data.user.username,
-            token: respond.data.jwt,
-            loggedIn: true,
-            userinfo: respond.data.user.userinfo
-          };
-          this.$store.commit("user/set", loggeduser);
-          this.$axios.setToken(loggeduser.token, "Bearer");
-          this.loading = false;
-          this.$router.push("/");
+    computed() {
+      return {
+        user() {
+          return this.$strapi.user;
         }
-      } catch (error) {
-        this.loading = false;
-        const response = error.response.data.message[0].messages[0].message;
-        this.error.push(response);
-        if (!response) error.push("unknown error");
-      }
+      };
     }
   }
 };
 </script>
 
 <style scoped>
-.justify-content-space-around{
+.justify-content-space-around {
   display: flex;
   justify-content: space-between;
 }

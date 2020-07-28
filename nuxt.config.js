@@ -57,7 +57,11 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ["~/plugins/axios", { ssr: false, src: "~/plugins/localstorage" }],
+  plugins: [
+    "~/plugins/axios",
+    { ssr: false, src: "~/plugins/localstorage" },
+    "~/plugins/strapi"
+  ],
   /*
    ** Nuxt.js dev-modules
    */
@@ -73,25 +77,21 @@ export default {
     "@nuxtjs/proxy",
     // Doc: https://github.com/nuxt-community/dotenv-module
     "@nuxtjs/dotenv",
-
+    // mark down
     "@nuxtjs/markdownit",
-    [
-      "nuxt-fontawesome",
-      {
-        imports: [
-          {
-            set: "@fortawesome/free-solid-svg-icons",
-            icons: ["fas"]
-          },
-          {
-            set: "@fortawesome/free-brands-svg-icons",
-            icons: ["fab"]
-          }
-        ]
-      }
-    ]
+    // strapi cms
+    "@nuxtjs/strapi",
+    //toast
+    "@nuxtjs/toast"
   ],
-
+  toast: {
+    position: "top-center",
+    duration: 1200
+  },
+  strapi: {
+    // Options
+    url: URI
+  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
