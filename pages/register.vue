@@ -192,7 +192,7 @@ export default {
         info: {
           Year: this.year,
           Full_name: this.fullname,
-          Specialite: this.specialite
+          specialite: this.specialite
         }
       };
 
