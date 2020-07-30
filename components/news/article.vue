@@ -1,17 +1,17 @@
 <template>
   <!-- post -->
   <div class="post post-row">
-    <a class="post-img fixocl" href>
+    <nuxt-link :to="link" class="post-img fixocl" href>
       <img :src="article.Picture.url" />
-    </a>
+    </nuxt-link>
     <div class="post-body">
       <h3 class="post-title">
-        <nuxt-link :to="getlink(article.id)">{{article.Title}}</nuxt-link>
+        <nuxt-link :to="link">{{ article.Title }}</nuxt-link>
       </h3>
       <ul class="post-meta">
-        <li>{{getdate()}}</li>
+        <li>{{ date }}</li>
       </ul>
-      <p>{{getparagarph()}}</p>
+      <p>{{ paragraph }}</p>
     </div>
   </div>
 </template>
@@ -23,39 +23,40 @@ export default {
   data() {
     return {};
   },
-  methods: {
-    getparagarph() {
-      if (this.article.Paragraph.length > 250) {
-        this.article.Paragraph =
-          this.article.Paragraph.substring(0, 300) + "...";
-        return this.article.Paragraph.substring(0, 300) + "...";
+  computed: {
+    paragraph() {
+      if (this.article.Text.length > 250) {
+        this.article.Text = this.article.Text.substring(0, 300) + "...";
+        return this.article.Text.substring(0, 300) + "...";
       }
-      return this.article.Paragraph;
+      return this.article.Text;
     },
-    getdate() {
-      var date = this.article.createdAt.substring(0, 9);
+    date() {
+      const date = this.article.createdAt.substring(0, 10);
       const mounths = [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December"
-      ][date.substring(6, 7)];
-      return date.substring(8, 9) + " " + mounths + " " + date.substring(0, 4);
+        "Janvier",
+        "Février",
+        "Mars",
+        "Avril",
+        "Mai",
+        "Juin",
+        "Juillet",
+        "Août",
+        "Septembre",
+        "Octobre",
+        "Novembre",
+        "Décembre"
+      ][+date.substring(5, 7) - 1];
+      return date.substring(8) + " " + mounths + " " + date.substring(0, 4);
     },
-    getlink(id) {
-      return "/news/" + id;
+    link() {
+      let str = "/news/v2/" + this.article.id;
+      return str;
     }
-  }
+  },
+  methods: {}
 };
-</script >
+</script>
 
 <style scoped>
 h1,

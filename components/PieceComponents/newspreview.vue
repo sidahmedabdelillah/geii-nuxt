@@ -1,12 +1,12 @@
 <template>
   <nuxt-link
-    :to="getlink(article.id)"
+    :to="link"
     class="h-entry mb-30 v-height gradient"
     :style="{ backgroundImage: `url(${article.Picture.url})` }"
   >
     <div class="text">
-      <h2>{{article.Title}}</h2>
-      <span class="date">July 19, 2019</span>
+      <h2>{{ article.Title }}</h2>
+      <span class="date">{{ date }}</span>
     </div>
   </nuxt-link>
 </template>
@@ -15,9 +15,28 @@
 export default {
   name: "newspreview",
   props: ["article"],
-  methods: {
-    getlink(id) {
-      return "/news/" + id;
+  computed: {
+    link() {
+      return "/news/" + this.article.id;
+    },
+
+    date() {
+      const date = this.article.createdAt.substring(0, 10);
+      const mounths = [
+        "Janvier",
+        "Février",
+        "Mars",
+        "Avril",
+        "Mai",
+        "Juin",
+        "Juillet",
+        "Août",
+        "Septembre",
+        "Octobre",
+        "Novembre",
+        "Décembre"
+      ][+date.substring(5, 7) - 1];
+      return date.substring(8) + " " + mounths + " " + date.substring(0, 4);
     }
   }
 };

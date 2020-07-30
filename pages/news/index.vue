@@ -100,7 +100,7 @@ export default {
       console.log(this.number);
     },
     getlink(id) {
-      return "/news/" + id;
+      return "/news/v2/" + id;
     }
   },
 
