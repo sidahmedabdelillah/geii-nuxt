@@ -28,7 +28,6 @@
         :link="s.link"
       ></slide1>
     </div>
-    <!---carousel inner end -->
     <a
       class="carousel-control-prev"
       href="#carouselExampleindicatord"

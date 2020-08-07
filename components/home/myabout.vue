@@ -1,7 +1,9 @@
 <template>
   <section id="mysection" class="section section-xl bg-default">
     <div class="container">
-      <div class="row row-50 text-md-left align-items-md-center justify-content-md-between">
+      <div
+        class="row row-50 text-md-left align-items-md-center justify-content-md-between"
+      >
         <div class="col-md-5 col-lg-4 order-md-2">
           <a href="index.html">
             <img
@@ -20,7 +22,7 @@
           </h2>
           <hr class="divider bg-madison divider-md-0" />
           <div class="offset-top-35 offset-lg-top-60">
-            <p>{{home_about.Paragraph}}</p>
+            <p>{{ home_about.Paragraph }}</p>
           </div>
           <div class="offset-top-30">
             <a class="btn btn-icon btn-icon-right button-default">
@@ -41,18 +43,6 @@ export default {
 };
 </script>
 <style scoped>
-/*** uncss> filename: test.css ***/
-
-@charset "UTF-8";
-a:focus {
-  outline: 0 !important;
-}
-:focus {
-  outline: 0;
-}
-p {
-  margin: 0;
-}
 h2 + .divider {
   margin-top: 29px;
 }
@@ -80,23 +70,19 @@ h2 + .divider {
     padding: 114px 0;
   }
 }
-body {
-  font-weight: 400;
-  overflow-x: hidden;
-}
+
 img {
   display: inline-block;
   max-width: 100%;
   height: auto;
 }
-a {
-  transition: all 0.2s ease-in-out;
-}
+
 a,
 a:active,
 a:focus,
 a:hover {
   text-decoration: none;
+  transition: all 0.2s ease-in-out;
 }
 .divider {
   width: 50px;
@@ -117,16 +103,7 @@ a:hover {
     margin-left: 0;
   }
 }
-body {
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.57143;
-  font-weight: 400;
-  color: #888;
-  background-color: #fff;
-  -webkit-text-size-adjust: none;
-  -webkit-font-smoothing: subpixel-antialiased;
-}
+
 h2 {
   font-size: 32px;
   line-height: 1.5;
@@ -137,13 +114,7 @@ h2 {
     font-size: 44px;
   }
 }
-html h2 + * {
-  margin-top: 29px;
-}
-p {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
+
 .bg-madison {
   background: #0d2d62;
   fill: #0d2d62;
@@ -152,9 +123,11 @@ p {
   background-color: #fff;
 }
 p {
+  margin-top: 10px;
+  margin-bottom: 10px;
   margin: 0;
 }
-html .btn {
+.btn {
   position: relative;
   padding: 15px 27px;
   font-size: 16px;
@@ -166,50 +139,25 @@ html .btn {
   backface-visibility: hidden;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.18);
 }
-html .btn:active,
-html .btn:active:focus,
-html .btn:focus {
+.btn:active,
+.btn:active:focus,
+.btn:focus {
   outline: 0;
   box-shadow: none !important;
 }
-.button-default,
-.button-default:focus {
-  color: #0d2d62;
+.button-default {
+  color: #193c4e;
   background-color: transparent;
-  border-color: #0d2d62;
+  border-color: #193c4e;
 }
+
 .button-default:active,
 .button-default:hover {
-  color: #fff;
-  background-color: #0d2d62;
-  border-color: #0d2d62;
+  color: #fff !important;
+  background-color: #193c4e;
+  border-color: #193c4e;
 }
-.btn.btn-icon {
-  padding-left: 28px;
-  padding-right: 28px;
-}
-.btn.btn-icon .icon {
-  font-size: 14px;
-  line-height: 14px;
-  vertical-align: middle;
-  transition: 0s;
-}
-.btn.btn-icon-right .icon {
-  float: right;
-  padding-left: 10px;
-}
-.icon {
-  position: relative;
-  display: inline-block;
-  font-weight: 400;
-  font-size: 36px;
-  line-height: 42px;
-  font-style: normal;
-}
-.icon:before {
-  display: inline-block;
-  position: relative;
-}
+
 .btn {
   margin-top: 5vh !important;
 }

@@ -22,7 +22,8 @@
                 role="tab"
                 aria-controls="Experience"
                 aria-selected="false"
-              >Enseignement</a>
+                >Enseignement</a
+              >
             </li>
             <li class="nav-item">
               <a
@@ -33,7 +34,8 @@
                 role="tab"
                 aria-controls="home"
                 aria-selected="true"
-              >Enseignement</a>
+                >Enseignement</a
+              >
             </li>
             <li class="nav-item">
               <a
@@ -44,7 +46,8 @@
                 role="tab"
                 aria-controls="profile"
                 aria-selected="false"
-              >Production Scientifique</a>
+                >Production Scientifique</a
+              >
             </li>
             <li class="nav-item">
               <a
@@ -55,12 +58,15 @@
                 role="tab"
                 aria-controls="contact"
                 aria-selected="false"
-              >Encadrement</a>
+                >Encadrement</a
+              >
             </li>
           </ul>
           <div class="tab-content" id="myTabContent">
             <!---enseignement-->
-            <Enseignement :Enseignement="user.prof_info.Enseignement"></Enseignement>
+            <Enseignement
+              :Enseignement="user.prof_info.Enseignement"
+            ></Enseignement>
             <!--fin Enseignement-->
 
             <!--Prodcution-->
@@ -71,7 +77,9 @@
             <!--fin Production-->
 
             <!--Encadrement-->
-            <Encadrement :Encadrement="user.prof_info.encadrements"></Encadrement>
+            <Encadrement
+              :Encadrement="user.prof_info.encadrements"
+            ></Encadrement>
             <!--fin Encadrement-->
 
             <!--Experience-->
@@ -91,7 +99,6 @@
             :Profile_g="user.prof_info.Profile_g"
             :Profile_linked="user.prof_info.Profile_linked"
           ></Side>
-          <!-- End Side-->
         </div>
       </div>
     </div>
@@ -112,7 +119,7 @@ export default {
       user: await $axios.$get(`/users/Teachers/${params.id}`),
       id: params.id
     };
-      },
+  },
   components: {
     top,
     Enseignement,

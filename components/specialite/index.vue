@@ -386,7 +386,6 @@ dd {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  justify-content: end;
 }
 .con {
   display: none;

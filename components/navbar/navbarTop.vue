@@ -8,6 +8,7 @@
           Departement Genie Electric Et Informatique Indistruelle
         </p>
       </div>
+
       <img class="enst" src="/enst.png" alt="" />
     </div>
   </div>
@@ -32,12 +33,17 @@ export default {};
 }
 
 .nav-top .inner .text {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
   align-items: center;
   margin: 0 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
+
 .enst {
   height: auto;
   display: block;
