@@ -5,7 +5,7 @@
     </div>
     <h6 class="module">{{ cour.Module || "" }}</h6>
     <div class="prof-wrape">
-      <p class="prof">{{ cour.user.username || "" }}</p>
+      <p class="prof">{{ username }}</p>
     </div>
     <div class="specilaite-wrape">
       <p class="specialite">{{ cour.specialite }}</p>
@@ -17,6 +17,15 @@
 export default {
   name: "cardCour",
   props: ["cour"],
+  computed: {
+    username() {
+      if (this.cour.user.username) {
+        return this.cour.user.username;
+      } else {
+        return "";
+      }
+    }
+  },
   methods: {
     open() {
       var win = window.open(this.cour.document[0].url, "_blank");
