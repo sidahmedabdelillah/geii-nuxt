@@ -85,7 +85,7 @@ export default {
             },
             {
               name: "Access etudiants",
-              path: "#"
+              path: "/etudiant/cour/"
             }
           ]
         },
