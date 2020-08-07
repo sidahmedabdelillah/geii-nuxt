@@ -27,7 +27,9 @@
         </ul>
       </div>
       <div class="col">
-        <div class="map-container"></div>
+        <div class="map-container">
+          <map-custom></map-custom>
+        </div>
       </div>
       <div class="col">
         <ul>
@@ -46,10 +48,10 @@
 </template>
 
 <script>
-//import mapCustom from "./map/mapCustom";
+import mapCustom from "./map/mapCustom";
 export default {
   components: {
-    // mapCustom
+    mapCustom
   }
 };
 </script>
