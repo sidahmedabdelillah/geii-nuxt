@@ -47,6 +47,7 @@ export default {
 }
 .card {
   width: 100%;
+  cursor: pointer;
   color: white;
   border: solid black 1px !important;
   border-radius: 5px !important;
@@ -59,6 +60,10 @@ export default {
   max-height: 35%;
   overflow: hidden;
   text-overflow: ellipsis;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
 }
 .title {
   font-weight: 400;
@@ -67,6 +72,10 @@ export default {
 
 .prof-wrape {
   position: absolute;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
   bottom: 30%;
 }
 .prof {
@@ -79,12 +88,20 @@ export default {
   margin-bottom: 10px;
   font-weight: 300;
   font-size: 12px;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
 }
 .specilaite-wrape {
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
 }
 .specialite {
   bottom: 0;
