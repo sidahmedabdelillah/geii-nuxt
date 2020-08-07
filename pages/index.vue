@@ -7,7 +7,9 @@
       <newssection :articles="articles" />
     </div>
     <div class="margin"></div>
-    <myfooter />
+    <no-ssr>
+      <myfooter />
+    </no-ssr>
   </section>
 </template>
 
@@ -40,9 +42,6 @@ export default {
 </script>
 
 <style scoped>
-.formation {
-}
-
 .mycontainer {
   width: 80%;
   margin: auto;

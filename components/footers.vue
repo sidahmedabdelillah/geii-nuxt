@@ -1,49 +1,53 @@
 <template>
   <div class="footer">
-    <div class="row">
-      <div class="col">
-        <ul class="links">
-          <li>
-            <a class="link hover" href="www.enst.dz">
-              Ecole Nationale Superieure de Tecknologie</a
-            >
-          </li>
-          <li>
-            <nuxt-link class="hover link" to="/">List des Pros</nuxt-link>
-          </li>
-          <li>
-            <nuxt-link class="hover link" to="/"
-              >Systeme Telecommunications Et Reseaux</nuxt-link
-            >
-          </li>
-          <li>
-            <nuxt-link class="link hover" to="/"
-              >Automatique Et Informatique Indistruelle</nuxt-link
-            >
-          </li>
-          <li>
-            <nuxt-link class="link hover" to="/">Systeme Embarqué</nuxt-link>
-          </li>
-        </ul>
-      </div>
-      <div class="col">
-        <div class="map-container">
-          <map-custom></map-custom>
+    <no-ssr>
+      <div class="row">
+        <div class="col">
+          <ul class="links">
+            <li>
+              <a class="link hover" href="www.enst.dz">
+                Ecole Nationale Superieure de Tecknologie</a
+              >
+            </li>
+            <li>
+              <nuxt-link class="hover link" to="/">List des Pros</nuxt-link>
+            </li>
+            <li>
+              <nuxt-link class="hover link" to="/"
+                >Systeme Telecommunications Et Reseaux</nuxt-link
+              >
+            </li>
+            <li>
+              <nuxt-link class="link hover" to="/"
+                >Automatique Et Informatique Indistruelle</nuxt-link
+              >
+            </li>
+            <li>
+              <nuxt-link class="link hover" to="/">Systeme Embarqué</nuxt-link>
+            </li>
+          </ul>
+        </div>
+        <div class="col">
+          <div class="map-container">
+            <no-ssr>
+              <map-custom></map-custom>
+            </no-ssr>
+          </div>
+        </div>
+        <div class="col">
+          <ul>
+            <li class="link">
+              <i class="fas fa-map-marker-alt"></i>ENST Cité Diplomatique Ex
+              Centre Biomédical Dergana-Bordj El Kiffan-
+            </li>
+            <li class="link">
+              <i class="fas fa-phone"></i> Phone: (+213) 78 29 83 435
+            </li>
+            <li class="link"><i class="fas fa-at"></i>Geii@enst.dz</li>
+          </ul>
         </div>
       </div>
-      <div class="col">
-        <ul>
-          <li class="link">
-            <i class="fas fa-map-marker-alt"></i>ENST Cité Diplomatique Ex
-            Centre Biomédical Dergana-Bordj El Kiffan-
-          </li>
-          <li class="link">
-            <i class="fas fa-phone"></i> Phone: (+213) 78 29 83 435
-          </li>
-          <li class="link"><i class="fas fa-at"></i>Geii@enst.dz</li>
-        </ul>
-      </div>
-    </div>
+    </no-ssr>
   </div>
 </template>
 
