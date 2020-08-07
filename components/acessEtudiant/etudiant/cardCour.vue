@@ -1,11 +1,11 @@
 <template>
   <div @click="open" class="card" :class="cour.type">
     <div class="title-wrape">
-      <h3 class="title">{{ cour.title }}</h3>
+      <h3 class="title">{{ cour.title || "" }}</h3>
     </div>
-    <h6 class="module">{{ cour.Module }}</h6>
+    <h6 class="module">{{ cour.Module || "" }}</h6>
     <div class="prof-wrape">
-      <p class="prof">{{ cour.user.username }}</p>
+      <p class="prof">{{ cour.user.username || "" }}</p>
     </div>
     <div class="specilaite-wrape">
       <p class="specialite">{{ cour.specialite }}</p>
