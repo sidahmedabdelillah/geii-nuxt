@@ -19,7 +19,7 @@ export default {
   props: ["cour"],
   computed: {
     username() {
-      if (this.cour.user.username) {
+      if (this.cour.user) {
         return this.cour.user.username;
       } else {
         return "";
