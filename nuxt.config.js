@@ -29,7 +29,13 @@ export default {
         rel: "stylesheet",
         type: "text/css",
         href:
-          "https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
+          "https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      },
+      {
+        rel: "stylesheet",
+        type: "text/css",
+        href:
+          "https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap"
       },
       {
         rel: "stylesheet",
