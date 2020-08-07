@@ -14,7 +14,7 @@
 <script>
 import slides from "@/components/home/slides";
 import formation from "@/components/home/formation";
-import myfooter from "@/components/myfooter";
+import myfooter from "@/components/footers";
 import myabout from "@/components/home/myabout";
 import newssection from "@/components/home/newssection";
 export default {
@@ -42,11 +42,7 @@ export default {
 <style scoped>
 .formation {
 }
-.home {
-  position: absolute !important;
-  top: 0 !important;
-  z-index: 1000;
-}
+
 .mycontainer {
   width: 80%;
   margin: auto;

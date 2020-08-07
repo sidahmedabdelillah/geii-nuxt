@@ -54,10 +54,7 @@ export default {
   components: {
     slide1
   },
-  props: ["slides"],
-  mounted() {
-    console.log(this.slides);
-  }
+  props: ["slides"]
 };
 </script>
 <style scoped>

@@ -70,6 +70,13 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
+    [
+      "nuxt-gmaps",
+      {
+        key: "AIzaSyBCuJxAindHg1470vw8Dok6o5Jqj9v3MvA"
+        //you can use libraries: ['places']
+      }
+    ],
     // Doc: https://bootstrap-vue.js.org
     "bootstrap-vue/nuxt",
     // Doc: https://axios.nuxtjs.org/usage

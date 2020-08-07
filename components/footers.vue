@@ -1,172 +1,84 @@
 <template>
-  <footer>
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
-          <div
-            class="col-md-4 col-lg-4 footer-about wow fadeInUp animated animated"
-            style="visibility: visible; animation-name: fadeInUp;"
-          >
-            <h1>Partners</h1>
-            <img >
-          </div>
-          <div
-            class="col-md-4 col-lg-4 offset-lg-1 footer-contact wow fadeInDown animated animated"
-            style="visibility: visible; animation-name: fadeInDown;"
-          >
-            <h1>Contact</h1>
-            <p>
-              <font-awesome-icon :icon="['fas', 'map-marker-alt']" />Dergana , Alger , min
-              jihet khamej ou bnin
-            </p>
-            <p>
-              <font-awesome-icon :icon="['fas', 'phone']" />Phone: (+213) 78 29 83 435
-            </p>
-            <p>
-              <font-awesome-icon :icon="['fas', 'envelope']" />Email:
-              <a href="mailto:hello@domain.com">geii@enst.dz</a>
-            </p>
-          </div>
-          <div
-            class="col-md-4 col-lg-3 footer-social wow fadeInUp animated animated"
-            style="visibility: visible; animation-name: fadeInUp;"
-          >
-            <h1>Follow us</h1>
-            <p>
-              <a href="#">
-                <font-awesome-icon :icon="['fab', 'facebook']" />
-              </a>
-              <a href="#">
-                <font-awesome-icon :icon="['fab', 'google-plus-g']" />
-              </a>
-              <a href="#">
-                <font-awesome-icon :icon="['fab', 'youtube']" />
-              </a>
-            </p>
-          </div>
-        </div>
+  <div class="footer">
+    <div class="row">
+      <div class="col">
+        <ul class="links">
+          <li>
+            <a class="link hover" href="www.enst.dz">
+              Ecole Nationale Superieure de Tecknologie</a
+            >
+          </li>
+          <li>
+            <nuxt-link class="hover link" to="/">List des Pros</nuxt-link>
+          </li>
+          <li>
+            <nuxt-link class="hover link" to="/"
+              >Systeme Telecommunications Et Reseaux</nuxt-link
+            >
+          </li>
+          <li>
+            <nuxt-link class="link hover" to="/"
+              >Automatique Et Informatique Indistruelle</nuxt-link
+            >
+          </li>
+          <li>
+            <nuxt-link class="link hover" to="/">Systeme Embarqué</nuxt-link>
+          </li>
+        </ul>
+      </div>
+      <div class="col">
+        <div class="map-container"></div>
+      </div>
+      <div class="col">
+        <ul>
+          <li class="link">
+            <i class="fas fa-map-marker-alt"></i>ENST Cité Diplomatique Ex
+            Centre Biomédical Dergana-Bordj El Kiffan-
+          </li>
+          <li class="link">
+            <i class="fas fa-phone"></i> Phone: (+213) 78 29 83 435
+          </li>
+          <li class="link"><i class="fas fa-at"></i>Geii@enst.dz</li>
+        </ul>
       </div>
     </div>
-  </footer>
+  </div>
 </template>
 
 <script>
+//import mapCustom from "./map/mapCustom";
 export default {
-  name: "myfooter"
+  components: {
+    // mapCustom
+  }
 };
 </script>
 
-<style scoped>
-body {
-  font-family: "Open Sans", sans-serif;
-  font-size: 15px;
-  font-weight: 400;
-  color: #888;
-  line-height: 30px;
-  text-align: center;
+<style>
+.map-container {
+  height: 20vh;
 }
-a {
-  color: #856dc0;
-  border-bottom: 1px dashed #856dc0;
-  text-decoration: none;
-  transition: all 0.3s;
-}
-a:focus,
-a:hover {
-  color: #856dc0;
-  border: 0;
-  text-decoration: none;
-}
-h1,
-h2 {
-  margin-top: 10px;
-  font-size: 38px;
-  font-weight: 300;
-  color: #555;
-  line-height: 50px;
-  font-style: italic;
-}
-h3 {
-  font-size: 22px;
-  font-weight: 300;
-  color: #555;
-  line-height: 30px;
-  font-style: italic;
-}
-img {
-  max-width: 100%;
-}
-::-moz-selection {
-  background: #7762ac;
-  color: #fff;
-  text-shadow: none;
-}
-::selection {
-  background: #7762ac;
-  color: #fff;
-  text-shadow: none;
-}
-.footer-top {
-  padding: 60px 0;
-  background: #333;
-  text-align: left;
-  color: #aaa;
-}
-.footer-top h3 {
-  padding-bottom: 10px;
-  color: #fff;
-}
-.footer-about img.logo-footer {
-  max-width: 74px;
-  margin-top: 0;
-  margin-bottom: 18px;
-}
-.footer-about p a {
-  color: #aaa;
-  border-bottom: 1px dashed #666;
-}
-.footer-about p a:focus,
-.footer-about p a:hover {
-  color: #fff;
-  border-color: #aaa;
-}
-.footer-contact p {
-  word-wrap: break-word;
-}
-.footer-contact font-awesome-icon {
-  padding-right: 10px;
-  font-size: 18px;
-  color: #666;
-}
-.footer-contact p a {
-  color: #aaa;
-  border-bottom: 1px dashed #666;
-}
-.footer-contact p a:focus,
-.footer-contact p a:hover {
-  color: #fff;
-  border-color: #aaa;
-}
-.footer-social a {
-  display: inline-block;
+i {
   margin-right: 20px;
-  margin-bottom: 8px;
-  color: #777;
-  border: 0;
 }
-.footer-social a:focus,
-.footer-social a:hover {
-  color: #aaa;
-  border: 0;
-}
-#partners {
-  display: flex;
-  flex-direction: column;
+li {
   list-style: none;
-  padding: 0 !important;
-  align-content: space-evenly;
+  margin-bottom: 10px;
 }
-#partners li img {
-  width: 10vw;
+.footer {
+  padding-top: 30px;
+  height: 60vh;
+  background-color: #193c4e;
+  color: #707070;
+}
+.link {
+  color: #707070;
+  font-size: 14px;
+  font-family: "Rubik", sans-serif;
+  font-weight: 100;
+  transition: all 200ms ease-in;
+}
+.hover:hover {
+  color: #aaaaaa;
 }
 </style>
