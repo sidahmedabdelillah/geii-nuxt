@@ -45,7 +45,9 @@
                   </div>
                   <div class="col info-space">
                     <div class="mini-info">
-                      <a href>{{ item.Title }}</a>
+                      <nuxt-link :to="`/news/v2/${item.id}`">{{
+                        item.Title
+                      }}</nuxt-link>
                       <div class="post-meta mb-30">
                         <div class="element">
                           <img

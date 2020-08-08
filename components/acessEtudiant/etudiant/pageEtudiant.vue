@@ -36,7 +36,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .search__input {
   width: 100%;
   padding: 12px 24px;

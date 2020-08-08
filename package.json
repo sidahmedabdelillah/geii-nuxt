@@ -33,6 +33,7 @@
     "sass-loader": "^9.0.2",
     "vue-fuse": "^2.2.1",
     "vue2-leaflet": "^2.5.2",
+    "vuex-persist": "^2.2.0",
     "vuex-persistedstate": "^3.0.1"
   },
   "devDependencies": {

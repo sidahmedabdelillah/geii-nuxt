@@ -1,12 +1,25 @@
 <template>
   <li class="nav-item">
-    <nuxt-link :to="link.path" class="nav-link"> {{ link.name }}</nuxt-link>
+    <nuxt-link v-if="!isLogout" :to="link.path" class="nav-link">
+      {{ link.name }}</nuxt-link
+    >
+    <a href v-if="isLogout" class="nav-link">
+      {{ link.name }}
+    </a>
   </li>
 </template>
 
 <script>
 export default {
-  props: ["link"]
+  props: ["link"],
+  computed: {
+    isLogout() {
+      if (this.link.path == "logout") {
+        return true;
+      }
+      return false;
+    }
+  }
 };
 </script>
 
@@ -23,6 +36,13 @@ a {
   color: white;
 }
 a:hover {
+  color: #193c4e;
+}
+p {
+  color: white;
+  margin-inline-end: 0;
+}
+p:hover {
   color: #193c4e;
 }
 .navbar ul li {

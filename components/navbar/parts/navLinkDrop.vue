@@ -28,7 +28,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .nav-link {
   padding-left: 40px !important;
   padding-right: 40px !important;
@@ -40,14 +40,12 @@ a {
 a:hover {
   color: #193c4e;
 }
+
 .navbar ul li {
   transition: all 200ms ease-in;
 }
+
 .navbar ul li:hover {
-  color: #193c4e !important;
-  background-color: white;
-}
-.nuxt-link-exact-active {
   color: #193c4e !important;
   background-color: white;
 }
@@ -72,5 +70,9 @@ a:hover {
 }
 .nav-item {
   margin-bottom: 0;
+}
+.nuxt-link-exact-active {
+  color: white !important;
+  background-color: gray;
 }
 </style>

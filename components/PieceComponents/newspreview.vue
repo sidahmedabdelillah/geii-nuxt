@@ -17,7 +17,7 @@ export default {
   props: ["article"],
   computed: {
     link() {
-      return "/news/" + this.article.id;
+      return "/news/v2/" + this.article.id;
     },
 
     date() {

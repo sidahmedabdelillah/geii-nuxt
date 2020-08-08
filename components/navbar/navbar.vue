@@ -19,7 +19,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 hr {
   margin: 0 auto;
   width: 90%;

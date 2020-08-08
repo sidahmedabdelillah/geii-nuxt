@@ -58,7 +58,9 @@
 </template>
 
 <script>
+import { mapMutations } from "vuex";
 export default {
+  middleware: "logged",
   data() {
     return {
       identifier: "",
@@ -68,7 +70,10 @@ export default {
     };
   },
   methods: {
-    async login() {
+    ...mapMutations({
+      setUser: "user/login"
+    }),
+    check() {
       this.error = [];
       if (this.identifier == "") {
         this.error.push("Identifier is required");
@@ -81,28 +86,27 @@ export default {
         this.error.forEach(function(item) {
           self.$toast.error(item);
         });
-      } else {
-        try {
-          this.loading = true;
-          await this.$strapi.login({
-            identifier: this.identifier,
-            password: this.password
-          });
-          this.loading = false;
-          this.$router.push("/");
-        } catch (e) {
-          this.loading = false;
-        }
+        return;
       }
+      this.login();
     },
-
-    computed() {
-      return {
-        user() {
-          return this.$strapi.user;
-        }
-      };
+    async login() {
+      try {
+        this.loading = true;
+        const user = await this.$strapi.login({
+          identifier: this.identifier,
+          password: this.password
+        });
+        this.setUser(user);
+        this.loading = false;
+      } catch (e) {
+        this.loading = false;
+      }
     }
+  },
+
+  computed: {
+    links() {}
   }
 };
 </script>

@@ -65,8 +65,8 @@ export default {
    */
   plugins: [
     "~/plugins/axios",
-    { ssr: false, src: "~/plugins/localstorage" },
-    "~/plugins/strapi"
+    "~/plugins/strapi",
+    { src: "~/plugins/vuex-persist", ssr: false }
   ],
   /*
    ** Nuxt.js dev-modules

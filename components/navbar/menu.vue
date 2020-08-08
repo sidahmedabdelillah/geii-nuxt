@@ -25,6 +25,15 @@
           ></nav-link>
           <nav-link-drop v-else :link="link" :key="link.name"></nav-link-drop>
         </template>
+        <nav-link
+          v-if="isLogged"
+          :link="{ name: 'loggin', path: '/login', sublinks: [] }"
+        ></nav-link>
+        <nav-link
+          v-else
+          @click="logout"
+          :link="{ name: 'logout', path: 'logout', sublinks: [] }"
+        ></nav-link>
       </ul>
     </div>
   </nav>
@@ -33,12 +42,14 @@
 <script>
 import navLink from "./parts/navLink";
 import navLinkDrop from "./parts/navLinkDrop";
+import { mapMutations } from "vuex";
 export default {
   name: "navMenu",
   components: {
     navLink,
     navLinkDrop
   },
+
   data: () => {
     return {
       links: [
@@ -93,14 +104,21 @@ export default {
           name: "About",
           path: "#",
           subLinks: []
-        },
-        {
-          name: "Login",
-          path: "/login",
-          subLinks: []
         }
       ]
     };
+  },
+  computed: {
+    isLogged() {
+      return !this.$store.state.user.isLogged;
+    }
+  },
+  methods: {
+    ...mapMutations({ reset: "user/logout" }),
+    logout() {
+      this.reset();
+      localStorage.clear();
+    }
   }
 };
 </script>
