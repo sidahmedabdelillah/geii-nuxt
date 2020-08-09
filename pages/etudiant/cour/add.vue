@@ -11,17 +11,21 @@
           placeholder="Le tittre du document"
         />
       </div>
+
       <div class="form-group">
-        <label for="exampleFormControlInput1">Module</label>
-        <input
+        <label for="exampleFormControlSelect1">Module</label>
+        <select
           v-model="Module"
-          name="Module"
-          required
           class="form-control"
-          id="exampleFormControlInput1"
-          placeholder="Le tittre du document"
-        />
+          id="exampleFormControlSelect1"
+          name="specialite"
+        >
+          <option v-for="module in listModules" :key="module.id">{{
+            module.module
+          }}</option>
+        </select>
       </div>
+
       <div class="form-group">
         <label for="exampleFormControlSelect1">Specialite</label>
         <select
@@ -30,11 +34,14 @@
           id="exampleFormControlSelect1"
           name="specialite"
         >
-          <option value="STR">Systeme Telecomunication et reseaux</option>
+          <option selected value="STR"
+            >Systeme Telecomunication et reseaux</option
+          >
           <option value="AUTO">Automatique et Informatique indistruelle</option>
           <option value="SE">Systeme embarque</option>
         </select>
       </div>
+
       <div class="form-group">
         <label for="exampleFormControlSelect1">Type de document</label>
         <select
@@ -83,11 +90,22 @@ const STATUS_INITIAL = 0,
   STATUS_FAILED = 3;
 export default {
   name: "app",
+  async asyncData({ $axios }) {
+    const moduleStr = await $axios.$get("/modules-telecomes");
+    const moduleSe = await $axios.$get("/modules-ses");
+    const moduleAuto = await $axios.$get("/module-autos");
+
+    return {
+      moduleStr,
+      moduleSe,
+      moduleAuto
+    };
+  },
   data() {
     return {
       title: "",
       Module: "",
-      specialite: "",
+      specialite: "STR",
       type: "",
       uploadedFiles: [],
       uploadError: null,
@@ -107,6 +125,21 @@ export default {
     },
     isFailed() {
       return this.currentStatus === STATUS_FAILED;
+    },
+    listModules() {
+      switch (this.specialite) {
+        case "STR":
+          return this.moduleStr;
+          break;
+        case "SE":
+          return this.moduleSe;
+          break;
+        case "AUTO":
+          return this.moduleAuto;
+        default:
+          return [];
+          break;
+      }
     }
   },
   methods: {

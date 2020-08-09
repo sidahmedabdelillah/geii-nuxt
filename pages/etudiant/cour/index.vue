@@ -1,6 +1,6 @@
 <template>
   <div class="padding">
-    <page-etudiant :cours="cours"></page-etudiant>
+    <page-etudiant :cours="cours" :modules="modules"></page-etudiant>
   </div>
 </template>
 
@@ -8,12 +8,15 @@
 import pageEtudiant from "../../../components/acessEtudiant/etudiant/pageEtudiant";
 export default {
   async asyncData({ $axios }) {
-    let cours = [];
-    try {
-      cours = await $axios.$get("/cours");
-    } catch (error) {}
+    const cours = await $axios.$get("/cours");
+    const moduleStr = await $axios.$get("/modules-telecomes");
+    const moduleSe = await $axios.$get("/modules-ses");
+    const moduleAuto = await $axios.$get("/module-autos");
+    const modules = [...moduleStr, ...moduleSe, ...moduleAuto];
+
     return {
-      cours
+      cours,
+      modules
     };
   },
   components: {
