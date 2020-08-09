@@ -102,6 +102,7 @@
 
 <script>
 import Fuse from "fuse.js";
+import fuzzySearch from "../../../utils/fuzzySearch";
 export default {
   head() {
     return {
@@ -147,16 +148,7 @@ export default {
   // TODO change the selection in the backend to an enumiratore
   computed: {
     listOfUsers() {
-      let fuze = new Fuse(this.filteredUsers, this.options);
-
-      if (this.query == "" || this.query == null) {
-        return this.filteredUsers;
-      }
-      let result = fuze.search(this.query);
-      let userss = result.map(item => {
-        return { ...item.item };
-      });
-      return userss;
+      return fuzzySearch(this.filteredUsers, this.options, this.query);
     },
     filteredUsers() {
       const list = [

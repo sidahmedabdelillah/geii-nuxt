@@ -3,13 +3,18 @@
     <div class="row">
       <div class="col-md-7" style="padding-bottom : 20px">
         <div class="search__container">
-          <input class="search__input" type="text" placeholder="Search" />
+          <input
+            class="search__input"
+            v-model="query"
+            type="text"
+            placeholder="Search"
+          />
         </div>
       </div>
     </div>
     <!-- search -->
     <div class="row">
-      <div class="col-md-4 col-sm-6" v-for="cour in cours" :key="cour.id">
+      <div class="col-md-4 col-sm-6" v-for="cour in searchCour" :key="cour.id">
         <card-cour :cour="cour"></card-cour>
       </div>
     </div>
@@ -17,10 +22,27 @@
 </template>
 
 <script>
+import fuzzySearch from "../../../../utils/fuzzySearch";
 import cardCour from "../cardCour";
 export default {
+  data() {
+    return {
+      query: "",
+      options: {
+        includeScore: true,
+        threshold: 0.2,
+        // Search in `author` and in `tags` array
+        keys: ["specialite", "title", "Module"]
+      }
+    };
+  },
   components: {
     cardCour
+  },
+  computed: {
+    searchCour() {
+      return fuzzySearch(this.cours, this.options, this.query);
+    }
   },
   props: ["cours"]
 };
