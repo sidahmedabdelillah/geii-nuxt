@@ -63,14 +63,10 @@
         <div class="row">
           <img :src="body_image" alt class="background-image" />
           <div class="col col-md-8 col-sm-12">
-            <div
-              class="paragraph"
-              v-for="item in specialite.paragraphs"
-              :key="item.title"
-            >
+            <div class="paragraph" v-for="item in specialite.extra" :key="item.title">
               <h1>{{ item.tittle }}</h1>
 
-              <div class="myp" v-html="render(item.paragraph)"></div>
+              <div class="myp" v-html="render(item.Text)"></div>
             </div>
             <div class="paragraph con">
               <h1>Notre mission</h1>
@@ -110,7 +106,7 @@ export default {
     return { link: [{ rel: "stylesheet", href: "/css/specialite/style.css" }] };
   },
   components: {
-    programme
+    programme,
   },
   props: [
     "tittle_color",
@@ -129,7 +125,7 @@ export default {
     "special_3_1",
     "special_1_2",
     "special_2_2",
-    "special_3_2"
+    "special_3_2",
   ],
   methods: {
     render(item) {
@@ -138,7 +134,7 @@ export default {
         .render(item)
         .replace(re, "span>")
         .replace("span", 'span class="colored"');
-    }
+    },
   },
   computed: {
     colors() {
@@ -148,13 +144,13 @@ export default {
         "--paragraph-tittle-color": this.paragraph_tittle_color,
         "--table-second-color": this.table_second_color,
         "--paragraph-tittle-line-color": this.paragraph_tittle_line_color,
-        "--notre-mission-color": this.notre_mission_color
+        "--notre-mission-color": this.notre_mission_color,
       };
     },
     splash() {
       return { "background-image": `url("${this.splash_image}")` };
-    }
-  }
+    },
+  },
 };
 </script>
 

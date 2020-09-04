@@ -6,38 +6,31 @@
       <formation class="formation" />
       <newssection :articles="articles" />
     </div>
-    <div class="margin"></div>
-    <no-ssr>
-      <myfooter />
-    </no-ssr>
   </section>
 </template>
 
 <script>
 import slides from "@/components/home/slides";
 import formation from "@/components/home/cardSection/formation";
-import myfooter from "@/components/home/footer/footers";
 import myabout from "@/components/home/myabout";
 import newssection from "@/components/home/newssection";
+
 export default {
   async asyncData({ $axios }) {
+    const articles = await $axios.$get("/Articles?_sort=createdAt:DESC");
     return {
-      articles: await $axios.$get("/Articles?_sort=createdAt:DESC"),
+      articles,
       home_about: await $axios.$get("/home-about"),
-      slides: await $axios.$get("/slides")
+      slides: await $axios.$get("/slides"),
     };
-  },
-  date: () => {
-    return {};
   },
 
   components: {
     slides,
     formation,
-    myfooter,
     myabout,
-    newssection
-  }
+    newssection,
+  },
 };
 </script>
 

@@ -42,19 +42,20 @@ export default {
     const special_3_2 = await $axios.$get(
       "/modules-ses?Anne=Troisieme_annee&Semestre=Deuxieme"
     );
+    const specialite = await $axios.$get("/se");
     return {
-      specialite: await $axios.$get("/se"),
+      specialite,
       special_1_1,
       special_1_2,
       special_2_1,
       special_2_2,
       special_3_1,
-      special_3_2
+      special_3_2,
     };
   },
   components: {
-    specialite
-  }
+    specialite,
+  },
 };
 </script>
 

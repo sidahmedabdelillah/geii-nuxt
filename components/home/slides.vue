@@ -19,13 +19,13 @@
     <!---caroussel inner-->
     <div class="carousel-inner" role="listbox">
       <slide1
-        v-for="(s, index) in slides"
-        :key="s.id"
-        :p="s.Paragraph"
-        :h1="s.Title"
+        v-for="(slide, index) in slides"
+        :key="slide.id"
+        :p="slide.Paragraph"
+        :h1="slide.Title"
         :active="{ active: index === 0 }"
-        :image="s.Picture.url"
-        :link="s.link"
+        :image="slide.Picture"
+        :link="slide.link"
       ></slide1>
     </div>
     <a
@@ -51,9 +51,9 @@ import slide1 from "./slides/silde1";
 export default {
   name: "slides",
   components: {
-    slide1
+    slide1,
   },
-  props: ["slides"]
+  props: ["slides"],
 };
 </script>
 <style scoped>

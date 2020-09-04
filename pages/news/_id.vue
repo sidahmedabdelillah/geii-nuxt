@@ -49,12 +49,10 @@ export default {
     // called every time before loading the component
     return {
       id: params.id,
-      article: await $axios.$get(`/Articles/${params.id}`)
+      article: await $axios.$get(`/Articles/${params.id}`),
     };
   },
-  mounted() {
-    //console.log(this.article.Paragraph.split("\n").shift());
-  },
+
   methods: {
     getdate() {
       var date = this.article.createdAt.substring(0, 9);
@@ -70,14 +68,14 @@ export default {
         "September",
         "October",
         "November",
-        "December"
+        "December",
       ][date.substring(6, 7)];
       return date.substring(8, 9) + " " + mounths + " " + date.substring(0, 4);
     },
     getlink(id) {
       return "/news/" + id;
-    }
-  }
+    },
+  },
 };
 </script>
 

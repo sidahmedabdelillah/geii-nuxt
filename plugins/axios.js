@@ -1,5 +1,6 @@
 export default function({ $axios, app }) {
   $axios.onError(error => {
-    pp.$toast.error(error);
+    console.log(error);
+    app.$toast.error(error);
   });
 }

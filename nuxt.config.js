@@ -1,4 +1,4 @@
-const URI = "https://admin.geii.me/";
+const URI = "http://localhost:1338/";
 const googleAuthID =
   "366986770967-cm1f8rg38ubercuqkqnfdodde0uesjnv.apps.googleusercontent.com";
 export default {
@@ -52,6 +52,9 @@ export default {
       }
     ]
   },
+  env: {
+    baseUrl: process.env.BASE_URL || URI
+  },
   /*
    ** Customize the progress-bar color
    */
@@ -66,6 +69,7 @@ export default {
   plugins: [
     "~/plugins/axios",
     "~/plugins/strapi",
+    "~/utils/imagesFilter",
     { src: "~/plugins/vuex-persist", ssr: false }
   ],
   /*
@@ -89,6 +93,7 @@ export default {
     "@nuxtjs/strapi",
     //toast
     "@nuxtjs/toast"
+    // Image Url
   ],
   toast: {
     position: "top-center",
@@ -109,9 +114,7 @@ export default {
   /*
    ** Build configuration
    */
-  proxy: {
-    "/api": URL
-  },
+
   build: {
     /*
      ** You can extend webpack config here

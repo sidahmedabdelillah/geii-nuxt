@@ -1,18 +1,10 @@
 <template>
   <section id="mysection" class="section section-xl bg-default">
     <div class="container">
-      <div
-        class="row row-50 text-md-left align-items-md-center justify-content-md-between"
-      >
+      <div class="row row-50 text-md-left align-items-md-center justify-content-md-between">
         <div class="col-md-5 col-lg-4 order-md-2">
           <a href="index.html">
-            <img
-              class="img-responsive d-inline-block"
-              :src="home_about.Picture.url"
-              alt
-              width="326"
-              height="329"
-            />
+            <img class="img-responsive d-inline-block" :src="imageUrl" alt width="326" height="329" />
           </a>
         </div>
         <div id="mydiv" class="col-md-7 col-lg-7 order-md-1">
@@ -39,7 +31,12 @@
 <script>
 export default {
   name: "myabout",
-  props: ["home_about"]
+  props: ["home_about"],
+  computed: {
+    imageUrl() {
+      return this.$imageFilter(this.home_about.Picture).image;
+    },
+  },
 };
 </script>
 <style scoped>

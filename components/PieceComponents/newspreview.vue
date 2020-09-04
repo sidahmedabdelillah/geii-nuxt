@@ -2,7 +2,7 @@
   <nuxt-link
     :to="link"
     class="h-entry mb-30 v-height gradient"
-    :style="{ backgroundImage: `url(${article.Picture.url})` }"
+    :style="{ backgroundImage: `url(${imageUrl})` }"
   >
     <div class="text">
       <h2>{{ article.Title }}</h2>
@@ -16,10 +16,12 @@ export default {
   name: "newspreview",
   props: ["article"],
   computed: {
+    imageUrl() {
+      return this.$imageFilter(this.article.Picture).thumbnail;
+    },
     link() {
       return "/news/v2/" + this.article.id;
     },
-
     date() {
       const date = this.article.createdAt.substring(0, 10);
       const mounths = [
@@ -34,11 +36,11 @@ export default {
         "Septembre",
         "Octobre",
         "Novembre",
-        "Décembre"
+        "Décembre",
       ][+date.substring(5, 7) - 1];
       return date.substring(8) + " " + mounths + " " + date.substring(0, 4);
-    }
-  }
+    },
+  },
 };
 </script>
 
