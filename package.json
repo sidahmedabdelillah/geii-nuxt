@@ -5,9 +5,10 @@
   "author": "sidahmedabdelillah",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "cross-env NUXT_PORT=4500 nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
+    "prod": "yarn build && yarn start",
     "generate": "nuxt generate"
   },
   "dependencies": {
