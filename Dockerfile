@@ -1,7 +1,6 @@
-FROM node:12.4-alpine
+FROM node:latest
 
 WORKDIR /usr/src/app
-
 
 COPY package*.json ./
 
@@ -11,5 +10,5 @@ RUN npm install
 COPY . .
 
 
-CMD [ "npm", "run" , "prod" ]
+CMD [ "npm", "run" , "dev" ]
 
