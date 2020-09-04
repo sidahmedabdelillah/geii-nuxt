@@ -1,6 +1,4 @@
-const URI = "http://localhost:1338/";
-const googleAuthID =
-  "366986770967-cm1f8rg38ubercuqkqnfdodde0uesjnv.apps.googleusercontent.com";
+require("dotenv").config();
 export default {
   mode: "universal",
   /*
@@ -53,7 +51,7 @@ export default {
     ]
   },
   env: {
-    baseUrl: process.env.BASE_URL || URI
+    baseUrl: process.env.BASE_URL
   },
   /*
    ** Customize the progress-bar color
@@ -101,14 +99,14 @@ export default {
   },
   strapi: {
     // Options
-    url: URI
+    url: process.env.BASE_URL
   },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    baseURL: URI,
+    baseURL: process.env.BASE_URL,
     proxy: false
   },
   /*
