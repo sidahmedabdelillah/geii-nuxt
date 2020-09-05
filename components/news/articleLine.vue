@@ -28,11 +28,12 @@ export default {
       return this.$imageFilter(this.article.Picture).thumbnail;
     },
     paragraph() {
-      if (this.article.Text.length > 250) {
-        this.article.Text = this.article.Text.substring(0, 300) + "...";
-        return this.article.Text.substring(0, 300) + "...";
+      if (this.article.Paragraph.length > 250) {
+        this.article.Paragraph =
+          this.article.Paragraph.substring(0, 300) + "...";
+        return this.article.Paragraph.substring(0, 300) + "...";
       }
-      return this.article.Text;
+      return this.article.Paragraph;
     },
     date() {
       const date = this.article.createdAt.substring(0, 10);
@@ -48,16 +49,16 @@ export default {
         "Septembre",
         "Octobre",
         "Novembre",
-        "Décembre",
+        "Décembre"
       ][+date.substring(5, 7) - 1];
       return date.substring(8) + " " + mounths + " " + date.substring(0, 4);
     },
     link() {
       let str = "/news/v2/" + this.article.id;
       return str;
-    },
+    }
   },
-  methods: {},
+  methods: {}
 };
 </script>
 
