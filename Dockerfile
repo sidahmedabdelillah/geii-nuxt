@@ -6,10 +6,12 @@ COPY package*.json ./
 
 RUN npm install
 
+RUN npm run build
+
 
 # Bundle app source
 COPY . .
 
 
-CMD [ "npm", "run" , "dev" ]
+CMD [ "npm", "run" , "start" ]
 
