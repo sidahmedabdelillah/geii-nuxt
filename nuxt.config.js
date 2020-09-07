@@ -68,6 +68,7 @@ export default {
     "~/plugins/axios",
     "~/plugins/strapi",
     "~/utils/imagesFilter",
+    "~/utils/fileFilter",
     { src: "~/plugins/vuex-persist", ssr: false }
   ],
   /*

@@ -17,100 +17,17 @@
         </button>
       </div>
     </div>
-    <h3>Premier Semestre</h3>
-    <div class="row">
-      <div class="table-responsive">
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Module</th>
-              <th scope="col">Coefition</th>
-            </tr>
-          </thead>
-          <tbody>
-            <template v-for="item in selected1">
-              <tr
-                :key="item.key"
-                class="accordion-toggle collapsed"
-                id="accordion1"
-                data-toggle="collapse"
-                data-parent="#accordion1"
-                :href="'#collapseOne' + item.id"
-              >
-                <td class="expand-button"></td>
-                <td>{{ item.module }}</td>
-                <td>{{ item.Credit }}</td>
-              </tr>
-              <tr class="hide-table-padding" :key="item.key">
-                <td></td>
-                <td colspan="3">
-                  <div :id="'collapseOne' + item.id" class="collapse in p-3">
-                    <div class="row">
-                      <div
-                        class="col"
-                        v-html="$md.render(item.discription)"
-                      ></div>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-            </template>
-          </tbody>
-        </table>
-      </div>
-    </div>
+    <table-tab :semestre="selected1" title="premier Semestre" />
 
-    <h3>Deuxieme Semestre</h3>
-
-    <div class="row">
-      <div class="table-responsive">
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Module</th>
-              <th scope="col">Coefition</th>
-            </tr>
-          </thead>
-          <tbody>
-            <template v-for="item in selected2">
-              <tr
-                :key="item.key"
-                class="accordion-toggle collapsed"
-                id="accordion1"
-                data-toggle="collapse"
-                data-parent="#accordion1"
-                :href="'#collapseOne' + item.id"
-              >
-                <td class="expand-button"></td>
-                <td>{{ item.module }}</td>
-                <td>{{ item.Credit }}</td>
-              </tr>
-              <tr class="hide-table-padding" :key="item.key">
-                <td></td>
-                <td colspan="3">
-                  <div :id="'collapseOne' + item.id" class="collapse in p-3">
-                    <div class="row">
-                      <div
-                        class="col"
-                        v-html="$md.render(item.discription)"
-                      ></div>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-            </template>
-          </tbody>
-        </table>
-      </div>
-    </div>
+    <table-tab :semestre="selected2" title="Deuxieme Semestre" />
   </div>
 </template>
 
 <script>
+import tableTab from "./tableTab";
 export default {
   name: "programme",
+  components: { tableTab },
   data: function() {
     return {
       selected1: this.special_1_1,
@@ -145,33 +62,8 @@ export default {
 </script>
 
 <style scoped>
-h3 {
-  padding: 2rem 0 1rem 0;
-}
 .btn {
   width: 100%;
   border-radius: 0 !important;
-}
-
-#col {
-  padding: 0;
-}
-tr.hide-table-padding td {
-  padding: 0;
-}
-
-.expand-button {
-  position: relative;
-}
-
-.accordion-toggle .expand-button:after {
-  position: absolute;
-  left: 0.75rem;
-  top: 50%;
-  transform: translate(0, -50%);
-  content: "-";
-}
-.accordion-toggle.collapsed .expand-button:after {
-  content: "+";
 }
 </style>
