@@ -1,150 +1,58 @@
-[
-  {
-    "confirmed": true,
-    "blocked": false,
-    "_id": "5f088f08037dbf106e90a531",
-    "username": "Test Teacher",
-    "email": "karima.rebai@enst.dz",
-    "createdAt": "2020-07-10T15:53:44.518Z",
-    "updatedAt": "2020-07-27T12:14:20.942Z",
-    "__v": 0,
-    "prof_info": {
-      "Enseignement": ["5f088f08037dbf106e90a52b", "5f088f08037dbf106e90a52c"],
-      "encadrements": ["5f088f08037dbf106e90a52a"],
-      "projet_recherches": [
-        "5f088f08037dbf106e90a528",
-        "5f088f08037dbf106e90a529"
-      ],
-      "communications": ["5f088f08037dbf106e90a52d"],
-      "publications": ["5f088f08037dbf106e90a52e", "5f088f08037dbf106e90a52f"],
-      "_id": "5f088f08037dbf106e90a530",
-      "Full_name": "REBAI Karima",
-      "Activite_pedagogique": "Mme Reabai a commencé sa cariere proffetionelle a la fin de léannée 2005 en tant que Attachée de recherche au centre de developement de tecknologie avncé ",
-      "Experience": "Mme Rebai a commencé sa carrière professionnelle à la fin de l’année 2005 en tant que Attachée de Recherche au Centre de Développement des Technologies Avancées (CDTA). Elle a travaillé en particulier avec l’équipe de Navigation et Contrôle de Robot Mobile Autonome (NCRMA) de la division Productique et Robotique.",
-      "Livre": "",
-      "Grade": "Maitre de conference B",
-      "Fonction_actuel": "Maitre de conference B",
-      "Specialite": "Contrôle de Processus et Robotique",
-      "Profile_g": "https://scholar.google.com/citations? user=zvss4CsAAAAJ&amp;hl=fr",
-      "Profile_linked": "https://scholar.google.com/citations? user=zvss4CsAAAAJ&amp;hl=fr",
-      "Profile_id": "https://scholar.google.com/citations? user=zvss4CsAAAAJ&amp;hl=fr",
-      "Conference": "",
-      "createdAt": "2020-07-10T15:53:44.363Z",
-      "updatedAt": "2020-07-27T12:14:20.943Z",
-      "__v": 0,
-      "user": "5f088f08037dbf106e90a531",
-      "Bureau": "A 12",
-      "id": "5f088f08037dbf106e90a530"
-    },
-    "id": "5f088f08037dbf106e90a531"
-  },
-  {
-    "confirmed": true,
-    "blocked": false,
-    "_id": "5f093b7c71f7d9158bbd0471",
-    "username": "Test Teacher 1",
-    "email": "test_teacher@enst.dz",
-    "createdAt": "2020-07-11T04:09:32.628Z",
-    "updatedAt": "2020-07-27T12:23:04.066Z",
-    "__v": 0,
-    "prof_info": {
-      "Enseignement": ["5f093b7c71f7d9158bbd046b", "5f093b7c71f7d9158bbd046c"],
-      "encadrements": ["5f093b7c71f7d9158bbd046a"],
-      "projet_recherches": [
-        "5f093b7c71f7d9158bbd0468",
-        "5f093b7c71f7d9158bbd0469"
-      ],
-      "communications": ["5f093b7c71f7d9158bbd046d"],
-      "publications": ["5f093b7c71f7d9158bbd046e", "5f093b7c71f7d9158bbd046f"],
-      "_id": "5f093b7c71f7d9158bbd0470",
-      "Full_name": "Test teacher",
-      "Activite_pedagogique": null,
-      "Experience": "Mme Rebai a commencé sa carrière professionnelle à la fin de l’année 2005 en tant que Attachée de Recherche au Centre de Développement des Technologies Avancées (CDTA). Elle a travaillé en particulier avec l’équipe de Navigation et Contrôle de Robot Mobile Autonome (NCRMA) de la division Productique et Robotique.",
-      "Livre": "",
-      "Grade": "Maitre de conference B",
-      "Fonction_actuel": "Maître de Conférences – Classe B",
-      "Specialite": "Contrôle de Processus et Robotique",
-      "Profile_g": "https://scholar.google.com/citations? user=zvss4CsAAAAJ&amp;hl=fr",
-      "Profile_linked": "https://scholar.google.com/citations? user=zvss4CsAAAAJ&amp;hl=fr",
-      "Profile_id": "https://scholar.google.com/citations? user=zvss4CsAAAAJ&amp;hl=fr",
-      "Conference": "",
-      "createdAt": "2020-07-11T04:09:32.500Z",
-      "updatedAt": "2020-07-27T12:23:04.068Z",
-      "__v": 0,
-      "user": "5f093b7c71f7d9158bbd0471",
-      "id": "5f093b7c71f7d9158bbd0470"
-    },
-    "id": "5f093b7c71f7d9158bbd0471"
-  },
-  {
-    "confirmed": true,
-    "blocked": false,
-    "_id": "5f093b9371f7d9158bbd048e",
-    "username": "Test Teacher 132",
-    "email": "test_teacher12@enst.dz",
-    "createdAt": "2020-07-11T04:09:55.266Z",
-    "updatedAt": "2020-07-27T12:23:17.893Z",
-    "__v": 0,
-    "prof_info": {
-      "Enseignement": ["5f093b9371f7d9158bbd0488", "5f093b9371f7d9158bbd0489"],
-      "encadrements": ["5f093b9371f7d9158bbd0487"],
-      "projet_recherches": [
-        "5f093b9371f7d9158bbd0485",
-        "5f093b9371f7d9158bbd0486"
-      ],
-      "communications": ["5f093b9371f7d9158bbd048a"],
-      "publications": ["5f093b9371f7d9158bbd048b", "5f093b9371f7d9158bbd048c"],
-      "_id": "5f093b9371f7d9158bbd048d",
-      "Full_name": "Test teacher",
-      "Activite_pedagogique": null,
-      "Experience": "Mme Rebai a commencé sa carrière professionnelle à la fin de l’année 2005 en tant que Attachée de Recherche au Centre de Développement des Technologies Avancées (CDTA). Elle a travaillé en particulier avec l’équipe de Navigation et Contrôle de Robot Mobile Autonome (NCRMA) de la division Productique et Robotique.",
-      "Livre": "",
-      "Grade": "Maitre de conference B",
-      "Fonction_actuel": "Maître de Conférences – Classe B",
-      "Specialite": "Contrôle de Processus et Robotique",
-      "Profile_g": "https://scholar.google.com/citations? user=zvss4CsAAAAJ&amp;hl=fr",
-      "Profile_linked": "https://scholar.google.com/citations? user=zvss4CsAAAAJ&amp;hl=fr",
-      "Profile_id": "https://scholar.google.com/citations? user=zvss4CsAAAAJ&amp;hl=fr",
-      "Conference": "",
-      "createdAt": "2020-07-11T04:09:55.126Z",
-      "updatedAt": "2020-07-27T12:23:17.894Z",
-      "__v": 0,
-      "user": "5f093b9371f7d9158bbd048e",
-      "id": "5f093b9371f7d9158bbd048d"
-    },
-    "id": "5f093b9371f7d9158bbd048e"
-  },
-  {
-    "confirmed": true,
-    "blocked": false,
-    "_id": "5f2e0aaded020aec14f29ccb",
-    "username": "popipa",
-    "email": "email@email.co",
-    "provider": "local",
-    "createdAt": "2020-08-08T02:15:09.588Z",
-    "updatedAt": "2020-08-08T02:15:09.596Z",
-    "__v": 0,
-    "role": {
-      "_id": "5f03e7583204787c4a675182",
-      "name": "Authenticated",
-      "description": "Default role given to authenticated user.",
-      "type": "authenticated",
-      "createdAt": "2020-07-07T03:09:12.368Z",
-      "updatedAt": "2020-07-07T03:09:12.368Z",
-      "__v": 0,
-      "id": "5f03e7583204787c4a675182"
-    },
-    "student_info": {
-      "_id": "5f2e0aaded020aec14f29cca",
-      "Full_name": "dqsdqds",
-      "Year": "unnee",
-      "Specialite": "qsdqsd",
-      "createdAt": "2020-08-08T02:15:09.574Z",
-      "updatedAt": "2020-08-08T02:15:09.595Z",
-      "__v": 0,
-      "user": "5f2e0aaded020aec14f29ccb",
-      "id": "5f2e0aaded020aec14f29cca"
-    },
-    "id": "5f2e0aaded020aec14f29ccb"
+{
+  "username": "rebai",
+  "passwod": "thisIsPassword",
+  "email": "email@enst.dz",
+  "info": {
+    "projet": [
+      {
+        "Tittre": "un projet",
+        "Mot_cle": "le mot cle",
+        "Anne": 2013,
+        "url": "google.dz"
+      },
+      {
+        "Tittre": "deux projet",
+        "Mot_cle": "deux mot cle",
+        "Anne": 2014,
+        "url": "Stackoverflow.com"
+      }
+    ],
+    "Encadrement": [
+      {
+        "Titre": "le titre d encadrement",
+        "Condidat": "les condidat",
+        "Anne": 2012,
+        "Type": "Master",
+        "Specialite": "Telecome"
+      }
+    ],
+    "Enseignement": [
+      {
+        "Anne": "2012-2013",
+        "Enseignement": "Antenne",
+        "Autre": "autre info",
+        "Specialite": "STR"
+      }
+    ],
+    "communication": [
+      {
+        "Text": "commutation"
+      }
+    ],
+    "publications": [
+      {
+        "Text": "commutation"
+      }
+    ],
+    "Full_name": "rebai Karima",
+    "Experience": "experience",
+    "Livre": "lien des livre",
+    "Grade": "grade du prof",
+    "Fonction_actuel": "chef dep",
+    "Specialite": "specialite du prof",
+    "Profile_g": "profile google schudle",
+    "Profile_linked": "profile linkedIn",
+    "Profile_id": "dak el profile",
+    "Conference": "kch conference"
   }
-]
+}

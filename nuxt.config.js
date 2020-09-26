@@ -98,10 +98,12 @@ export default {
     position: "top-center",
     duration: 1200
   },
+
   strapi: {
     // Options
     url: process.env.BASE_URL
   },
+
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
@@ -110,12 +112,10 @@ export default {
     baseURL: process.env.BASE_URL,
     proxy: false
   },
-  /*
-   ** Build configuration
-   */
 
+  // server setting
   server: {
-    port: 8000, // default: 3000
+    port: process.env.SITE_PORT, // default: 3000
     host: "0.0.0.0", // default: localhost,
     timing: false
   },

@@ -102,7 +102,7 @@ export default {
         },
         {
           name: "About",
-          path: "#",
+          path: "/about",
           subLinks: []
         }
       ]

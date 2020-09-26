@@ -28,12 +28,17 @@ export default {
       return this.$imageFilter(this.article.Picture).thumbnail;
     },
     paragraph() {
-      if (this.article.Paragraph.length > 250) {
-        this.article.Paragraph =
-          this.article.Paragraph.substring(0, 300) + "...";
-        return this.article.Paragraph.substring(0, 300) + "...";
-      }
-      return this.article.Paragraph;
+      const md = this.$md.render(this.article.Paragraph);
+      const paragraph = md.split("<p")[1].slice(1, 250);
+      let p = "";
+      const re = new RegExp("<[^>]*>");
+
+      // while (p != paragraph) {
+      //   p = paragraph.replace(re, "");
+      //   console.log(p, paragraph);
+      // }
+
+      return paragraph;
     },
     date() {
       const date = this.article.createdAt.substring(0, 10);
