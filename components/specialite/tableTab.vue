@@ -31,9 +31,19 @@
                   <div :id="'collapseOne' + item.id" class="collapse in p-3">
                     <div class="row">
                       <div
-                        class="col"
+                        class="col-md-12"
                         v-html="renderCourseDiscription(item.discription)"
                       ></div>
+                      <div class="col-md-12">
+                        <h5>document Suplementaire</h5>
+                        <a
+                          v-for="document in item.document"
+                          :key="document.id"
+                          target="__blanc"
+                          :href="getUrl(document.document).url"
+                          >{{ getUrl(document.document).name }}
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </td>
@@ -52,9 +62,16 @@ export default {
   methods: {
     renderCourseDiscription(discription) {
       discription = discription.replace("![", "[");
+      console.log({ discription });
       return this.$md.render(discription);
+    },
+    getUrl() {
+      const f = this.semestre[0].document[0].document;
+      const myFile = this.$fileFilter(this.semestre[0].document[0].document);
+      return myFile;
     }
-  }
+  },
+  computed: {}
 };
 </script>
 

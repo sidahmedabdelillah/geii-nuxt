@@ -1,10 +1,18 @@
 <template>
   <section id="mysection" class="section section-xl bg-default">
     <div class="container">
-      <div class="row row-50 text-md-left align-items-md-center justify-content-md-between">
+      <div
+        class="row row-50 text-md-left align-items-md-center justify-content-md-between"
+      >
         <div class="col-md-5 col-lg-4 order-md-2">
           <a href="index.html">
-            <img class="img-responsive d-inline-block" :src="imageUrl" alt width="326" height="329" />
+            <img
+              class="img-responsive d-inline-block"
+              :src="imageUrl"
+              alt
+              width="326"
+              height="329"
+            />
           </a>
         </div>
         <div id="mydiv" class="col-md-7 col-lg-7 order-md-1">
@@ -17,7 +25,7 @@
             <p>{{ home_about.Paragraph }}</p>
           </div>
           <div class="offset-top-30">
-            <a class="btn btn-icon btn-icon-right button-default">
+            <a class="btn btn-icon btn-icon-right button-default" href="/about">
               <span>Learn More</span>
               <font-awesome-icon :icon="['fa', 'arrow-right']" />
             </a>
@@ -35,8 +43,8 @@ export default {
   computed: {
     imageUrl() {
       return this.$imageFilter(this.home_about.Picture).image;
-    },
-  },
+    }
+  }
 };
 </script>
 <style scoped>

@@ -5,17 +5,16 @@
     data-ride="carousel"
     data-interval="50000"
   >
-    <!-----
     <ol class="carousel-indicators">
       <li
-        v-for="(s , index) in slides"
+        v-for="(s, index) in slides"
         :key="s.id"
         data-target="#carouselExampleindicatord"
         :data-slide-to="index"
-        :class="{ 'active': index === 0 }"
+        :class="{ active: index === 0 }"
       ></li>
     </ol>
-    -->
+
     <!---caroussel inner-->
     <div class="carousel-inner" role="listbox">
       <slide1
@@ -51,9 +50,9 @@ import slide1 from "./slides/silde1";
 export default {
   name: "slides",
   components: {
-    slide1,
+    slide1
   },
-  props: ["slides"],
+  props: ["slides"]
 };
 </script>
 <style scoped>

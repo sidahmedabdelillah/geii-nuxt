@@ -30,7 +30,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .link {
   color: #707070;
   font-size: 14px;

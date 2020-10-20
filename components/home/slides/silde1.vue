@@ -1,5 +1,8 @@
 <template>
-  <div v-bind:class="[active, carousel]" :style="{ backgroundImage: `url(${imageUrl.image})` }">
+  <div
+    v-bind:class="[active, carousel]"
+    :style="{ backgroundImage: `url(${imageUrl.image})` }"
+  >
     <div class="carousel-caption">
       <nuxt-link :to="link" class="carousel-link">
         <h1>{{ h1 }}</h1>
@@ -15,14 +18,14 @@ export default {
   props: ["h1", "p", "active", "image", "link"],
   data() {
     return {
-      carousel: "carousel-item  no-repeat",
+      carousel: "carousel-item  no-repeat"
     };
   },
   computed: {
     imageUrl() {
       return this.$imageFilter(this.image);
-    },
-  },
+    }
+  }
 };
 </script>
 

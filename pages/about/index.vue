@@ -21,11 +21,11 @@
           <div class="" v-html="paragraph"></div>
           <h1>Comité Scientifique du Département</h1>
 
-          <h3>Membre du CSD</h3>
+          <h3>Membre du CSD :</h3>
           <ul class="list-prof">
             <li v-for="prof in comite" :key="prof.id">
               <a :href="prof.url">
-                <h4>{{ prof.nomAffichage }} :</h4>
+                <h6>{{ prof.nomAffichage }} :</h6>
               </a>
               <p>{{ prof.role }}</p>
             </li>
@@ -64,24 +64,17 @@ export default {
 </script>
 
 <style scoped>
-/*!
- * Start Bootstrap - Clean Blog v5.0.9 (https://startbootstrap.com/themes/clean-blog)
- * Copyright 2013-2020 Start Bootstrap
- * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-clean-blog/blob/master/LICENSE)
- */
-body {
-  font-size: 20px;
-  color: #212529;
-  font-family: Lora, "Times New Roman", serif;
-}
 p {
   line-height: 1.5;
   margin: 30px 0;
 }
+li {
+  padding: 5px 0;
+}
 .list-prof p {
   display: inline;
 }
-.list-prof h4 {
+.list-prof h6 {
   display: inline;
 }
 .list-prof ul {
@@ -115,5 +108,8 @@ header.masthead .page-heading {
 header.masthead .page-heading h1 {
   font-size: 50px;
   margin-top: 0;
+}
+.container {
+  margin-bottom: 100px;
 }
 </style>

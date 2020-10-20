@@ -22,7 +22,7 @@
                 role="tab"
                 aria-controls="Experience"
                 aria-selected="false"
-                >Enseignement</a
+                >Experience</a
               >
             </li>
             <li class="nav-item">

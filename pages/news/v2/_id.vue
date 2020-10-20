@@ -17,14 +17,13 @@ export default {
   },
   components: {
     rightSide,
-    leftSide,
+    leftSide
   },
   async asyncData({ params, $axios }) {
-    // called every time before loading the component
     return {
       id: params.id,
       article: await $axios.$get(`/Articles/${params.id}`),
-      articles: await $axios.$get(`/Articles?_sort=createdAt:DESC&_limit=6`),
+      articles: await $axios.$get(`/Articles?_sort=createdAt:DESC&_limit=6`)
     };
   },
   methods: {
@@ -40,8 +39,17 @@ export default {
         .render(this.article.Paragraph)
         .split("p>")[1]
         .split("</")[0];
-    },
-  },
+    }
+  }
 };
 </script>
-
+<style scoped>
+p {
+  font-family: "Montserrat", sans-serif;
+  color: #6a6a6a;
+  font-size: 14px;
+  line-height: 2;
+  font-weight: 500;
+  padding-right: 1rem;
+}
+</style>
