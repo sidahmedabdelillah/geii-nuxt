@@ -6,7 +6,7 @@
     table_second_color="#FF7B00"
     paragraph_tittle_line_color="#FF7B00"
     notre_mission_color="#FF7B00"
-    header_tittle="Automatisme et Informatique industruel"
+    header_tittle="Automatique"
     side_image="/page_auto/side.png"
     splash_image="/page_auto/splash.png"
     body_image="/page_auto/body.png"

@@ -17,11 +17,11 @@ import newssection from "@/components/home/newssection";
 
 export default {
   async asyncData({ $axios }) {
-    const articles = await $axios.$get("/Articles?_sort=createdAt:DESC");
+    const articles = await $axios.$get("/Articles?_sort=createdAt:ASC");
     return {
       articles,
       home_about: await $axios.$get("/home-about"),
-      slides: await $axios.$get("/slides"),
+      slides: await $axios.$get("/slides")
     };
   },
 
@@ -29,8 +29,8 @@ export default {
     slides,
     formation,
     myabout,
-    newssection,
-  },
+    newssection
+  }
 };
 </script>
 

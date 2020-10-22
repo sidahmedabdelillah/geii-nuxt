@@ -73,11 +73,11 @@ export default {
             },
             {
               name: "Automatique",
-              path: "/specialite/SE"
+              path: "/specialite/AUTO"
             },
             {
               name: "Electronique",
-              path: "/specialite/AUTO"
+              path: "/specialite/SE"
             }
           ]
         },
