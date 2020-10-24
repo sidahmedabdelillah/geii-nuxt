@@ -1,6 +1,7 @@
 export default (context, inject) => {
   const imageFilter = imageObject => {
     if (imageObject && imageObject.provider == "local") {
+      console.log(process.env.BASE_URL);
       return {
         image: process.env.BASE_URL + imageObject.url,
         thumbnail: process.env.BASE_URL + imageObject.formats.thumbnail.url
