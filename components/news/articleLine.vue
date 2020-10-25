@@ -17,6 +17,8 @@
 </template>
 
 <script>
+import JSSoup from "jssoup";
+
 export default {
   name: "articleline",
   props: ["article"],
@@ -29,16 +31,8 @@ export default {
     },
     paragraph() {
       const md = this.$md.render(this.article.Paragraph);
-      const paragraph = md.split("<p")[1].slice(1, 250);
-      let p = "";
-      const re = new RegExp("<[^>]*>");
-
-      // while (p != paragraph) {
-      //   p = paragraph.replace(re, "");
-      //   console.log(p, paragraph);
-      // }
-
-      return paragraph;
+      const soup = new JSSoup(md);
+      return this.limit(soup.find("p").text);
     },
     date() {
       const date = this.article.createdAt.substring(0, 10);
@@ -63,7 +57,14 @@ export default {
       return str;
     }
   },
-  methods: {}
+  methods: {
+    limit: p => {
+      if (p.length > 250) {
+        return p.substring(0, 250) + "...";
+      }
+      return p;
+    }
+  }
 };
 </script>
 

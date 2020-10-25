@@ -37,17 +37,17 @@ import articleThumb from "@/components/news/articleThumb";
 export default {
   components: {
     articleLine,
-    articleThumb,
+    articleThumb
   },
   async asyncData({ $axios }) {
     return {
-      articles: await $axios.$get(`/Articles?_sort=createdAt:DESC&_limit=6`),
+      articles: await $axios.$get(`/Articles?_sort=createdAt:ASC&_limit=6`)
     };
   },
   data() {
     return {
       number: 6,
-      articles: [],
+      articles: []
     };
   },
 
@@ -59,8 +59,8 @@ export default {
       );
       console.log(this.articles);
       console.log(this.number);
-    },
-  },
+    }
+  }
 };
 </script>
 
