@@ -5,10 +5,15 @@ export default (context, inject) => {
         name: fileObject.name,
         url: process.env.BASE_URL + fileObject.url
       };
-    } else {
+    } else if (fileObject) {
       return {
         name: fileObject.name,
         url: fileObject.url
+      };
+    } else {
+      return {
+        name: "",
+        url: ""
       };
     }
   };
