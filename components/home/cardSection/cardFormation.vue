@@ -12,13 +12,14 @@
 
 <script>
 export default {
-  props: ["card"],
+  props: ["card"]
 };
 </script>
 
 <style scoped>
 h3 {
   font-size: 2.5vw;
+  text-align: center;
 }
 .card-image {
   width: 8vw;

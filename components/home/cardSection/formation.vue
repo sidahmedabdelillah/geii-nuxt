@@ -1,6 +1,7 @@
 <template>
   <section class="Foramtion-section">
-    <h1 class="font-weight-bold">Formation</h1>
+    <home-title text="Formation" />
+
     <div class="row cards-container">
       <div class="col-sm">
         <card-formation :card="cards[0]"></card-formation>
@@ -17,9 +18,11 @@
 
 <script>
 import cardFormation from "./cardFormation";
+import homeTitle from "@/components/PieceComponents/home/HomeTitle";
+
 export default {
   name: "formation",
-  components: { cardFormation },
+  components: { cardFormation, homeTitle },
   data: () => {
     return {
       cards: [
@@ -43,15 +46,8 @@ export default {
 </script>
 
 <style scoped>
-h3 {
-  font-size: 2.5vw;
-}
 .Foramtion-section {
   margin-top: 0;
-  text-align: center;
   padding: 2vh;
-}
-h1 {
-  text-align: left !important;
 }
 </style>

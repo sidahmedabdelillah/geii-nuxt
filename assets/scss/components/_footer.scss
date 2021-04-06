@@ -1,0 +1,33 @@
+.footer {
+  padding-top: 30px;
+  height: 60vh;
+  background-color: #193c4e;
+  color: #707070;
+  li {
+    list-style: none;
+    margin-bottom: 10px;
+  }
+  .link {
+    color: #707070;
+    font-size: 14px;
+    font-family: "Rubik", sans-serif;
+    font-weight: 100;
+    transition: all 200ms ease-in;
+  }
+
+  // left side hover effect
+  .left {
+    .link {
+      &:hover {
+        color: #aaaaaa;
+      }
+    }
+  }
+
+  // right side icon alignement
+  .right {
+    i {
+      margin-right: 20px;
+    }
+  }
+}

@@ -1,0 +1,128 @@
+.section {
+  padding: 0px 0 20px 0;
+
+  &-xl {
+    padding: 70px 0;
+  }
+  .row-50 {
+    margin-bottom: -50px;
+  }
+  & > * {
+    margin-bottom: 50px;
+  }
+  h2 {
+    font-size: 32px;
+    line-height: 1.5;
+    + .divider {
+      margin-top: 29px;
+    }
+  }
+
+  p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin: 0;
+  }
+
+  img {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  a,
+  a:active,
+  a:focus,
+  a:hover {
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .divider {
+    width: 50px;
+    height: 3px;
+    padding: 0;
+    margin: 0 auto;
+    background: #b1b1b1;
+    border: none;
+
+    + * {
+      margin-top: 21px;
+    }
+  }
+
+  .bg-madison {
+    background: #0d2d62;
+    fill: #0d2d62;
+  }
+
+  .btn {
+    position: relative;
+    padding: 15px 27px;
+    font-size: 16px;
+    line-height: 16px;
+    border-radius: 5px;
+    white-space: nowrap;
+    border-width: 2px;
+    transition: 0.3s;
+    backface-visibility: hidden;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.18);
+    margin-top: 5vh !important;
+    &:active,
+    &:active:focus,
+    &:focus {
+      outline: 0;
+      box-shadow: none !important;
+    }
+  }
+
+  .button-default {
+    color: #193c4e;
+    background-color: transparent;
+    border-color: #193c4e;
+    &:active,
+    &:hover {
+      color: #fff !important;
+      background-color: #193c4e;
+      border-color: #193c4e;
+    }
+  }
+
+  .mydiv {
+    padding-top: 2vh !important;
+  }
+
+  @media (min-width: 992px) {
+    .text-md-left {
+      text-align: left;
+    }
+  }
+  @media (max-width: 991.98px) {
+    section.section-xl:first-of-type {
+      padding-top: 40px;
+    }
+  }
+  @media (min-width: 992px) {
+    .section-xl {
+      padding: 114px 0;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .divider-md-0 {
+      margin-left: 0;
+    }
+  }
+
+  @media (min-width: 768px) {
+    h2 {
+      line-height: 1.27273;
+      font-size: 44px;
+    }
+  }
+  @media (max-width: 576px) {
+    img {
+      display: none !important;
+    }
+  }
+}

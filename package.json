@@ -28,17 +28,17 @@
     "js-cookie": "^2.2.1",
     "jssoup": "0.0.12",
     "leaflet": "^1.7.1",
-    "node-sass": "^4.14.1",
     "nuxt": "^2.14.4",
     "nuxt-fontawesome": "^0.4.0",
     "nuxt-gmaps": "^1.2.5",
-    "sass-loader": "^9.0.3",
     "vue-fuse": "^2.2.1",
     "vue2-leaflet": "^2.5.2",
     "vuex-persist": "^2.2.0",
     "vuex-persistedstate": "^3.1.0"
   },
   "devDependencies": {
-    "cross-env": "^7.0.2"
+    "cross-env": "^7.0.2",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^9.0.3"
   }
 }

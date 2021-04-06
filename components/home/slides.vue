@@ -55,14 +55,3 @@ export default {
   props: ["slides"]
 };
 </script>
-<style scoped>
-/*---slider-----*/
-.carousel-item {
-  height: 60vh;
-}
-.no-repeat {
-  background-repeat: no-repeat !important;
-  background-position: center;
-  background-size: cover;
-}
-</style>

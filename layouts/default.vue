@@ -6,14 +6,14 @@
   </div>
 </template>
 <script>
-import navbar from "../components/navbar/navbar";
-import myfooter from "@/components/home/footer/footers";
+import navbar from "@/components/navbar/navbar";
+import myfooter from "@/components/home/footer";
 
 export default {
   components: {
     navbar,
-    myfooter,
-  },
+    myfooter
+  }
 };
 </script>
 <style>
