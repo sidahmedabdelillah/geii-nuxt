@@ -41,7 +41,7 @@ export default {
   },
   async asyncData({ $axios }) {
     return {
-      articles: await $axios.$get(`/Articles?_sort=createdAt:ASC&_limit=6`)
+      articles: await $axios.$get(`/Articles?_sort=created_at:ASC&_limit=6`)
     };
   },
   data() {

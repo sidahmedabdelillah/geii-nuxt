@@ -23,7 +23,7 @@ export default {
     return {
       id: params.id,
       article: await $axios.$get(`/Articles/${params.id}`),
-      articles: await $axios.$get(`/Articles?_sort=createdAt:ASC&_limit=6`)
+      articles: await $axios.$get(`/Articles?_sort=created_at:ASC&_limit=6`)
     };
   },
   methods: {

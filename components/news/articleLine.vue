@@ -35,7 +35,7 @@ export default {
       return this.limit(soup.find("p").text);
     },
     date() {
-      const date = this.article.createdAt.substring(0, 10);
+      const date = this.article.created_at.substring(0, 10);
       const mounths = [
         "Janvier",
         "Février",

@@ -12,9 +12,7 @@
               <div class="col info-space">
                 <div class="mini-info">
                   <nuxt-link :to="`/news/v2/${item.id}`">
-                    {{
-                    item.Title
-                    }}
+                    {{ item.Title }}
                   </nuxt-link>
                   <div class="post-meta mb-30">
                     <div class="element">
@@ -22,7 +20,7 @@
                         src="https://colorlib.com/preview/theme/videomag/img/core-img/calendar2.png"
                         alt
                       />
-                      {{ item.createdAt.slice(0, 10) }}
+                      {{ item.created_at.slice(0, 10) }}
                     </div>
                   </div>
                 </div>
@@ -41,10 +39,9 @@ export default {
   methods: {
     getImageUrl(img) {
       return this.$imageFilter(img).image;
-    },
-  },
+    }
+  }
 };
 </script>
 
-<style>
-</style>
+<style></style>

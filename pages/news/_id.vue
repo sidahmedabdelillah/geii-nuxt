@@ -13,9 +13,9 @@
           <div class="row">
             <div class="col-md-10">
               <div class="post-category"></div>
-              <h1>{{article.Title}}</h1>
+              <h1>{{ article.Title }}</h1>
               <ul class="post-meta">
-                <li>{{getdate()}}</li>
+                <li>{{ getdate() }}</li>
               </ul>
             </div>
           </div>
@@ -33,7 +33,7 @@
         <div class="row">
           <!-- post content -->
           <div class="section-row">
-            <h3>{{article.Title}}</h3>
+            <h3>{{ article.Title }}</h3>
             <div v-html="$md.render(article.Paragraph)"></div>
           </div>
           <!-- /post content -->
@@ -49,13 +49,13 @@ export default {
     // called every time before loading the component
     return {
       id: params.id,
-      article: await $axios.$get(`/Articles/${params.id}`),
+      article: await $axios.$get(`/Articles/${params.id}`)
     };
   },
 
   methods: {
     getdate() {
-      var date = this.article.createdAt.substring(0, 9);
+      var date = this.article.created_at.substring(0, 9);
       const mounths = [
         "January",
         "February",
@@ -68,14 +68,14 @@ export default {
         "September",
         "October",
         "November",
-        "December",
+        "December"
       ][date.substring(6, 7)];
       return date.substring(8, 9) + " " + mounths + " " + date.substring(0, 4);
     },
     getlink(id) {
       return "/news/" + id;
-    },
-  },
+    }
+  }
 };
 </script>
 

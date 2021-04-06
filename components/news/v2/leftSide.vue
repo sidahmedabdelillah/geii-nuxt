@@ -8,15 +8,24 @@
         <h2>{{ article.Title }}</h2>
         <div class="post-meta mb-30">
           <div class="element">
-            <img src="https://colorlib.com/preview/theme/videomag/img/core-img/calendar2.png" alt />
-            {{ article.createdAt.slice(0, 10) }}
+            <img
+              src="https://colorlib.com/preview/theme/videomag/img/core-img/calendar2.png"
+              alt
+            />
+            {{ article.created_at.slice(0, 10) }}
           </div>
         </div>
       </div>
-      <div class="article-body" v-if="article.Text" v-html="render(article.Text)"></div>
+      <div class="article-body" v-html="render(article.Paragraph)"></div>
       <div class="row" v-for="ex in article.extra" :key="ex.id">
-        <extra-paragraph v-if="ex.__component == 'article.extra-article'" :extra="ex"></extra-paragraph>
-        <extra-image v-if="ex.__component == 'images.images'" :extra="ex"></extra-image>
+        <extra-paragraph
+          v-if="ex.__component == 'article.extra-article'"
+          :extra="ex"
+        ></extra-paragraph>
+        <extra-image
+          v-if="ex.__component == 'images.images'"
+          :extra="ex"
+        ></extra-image>
       </div>
     </div>
   </div>
@@ -29,21 +38,20 @@ export default {
   name: "articleLeftSide",
   components: {
     extraParagraph,
-    extraImage,
+    extraImage
   },
   props: ["article"],
   computed: {
     imageUrl() {
       return this.$imageFilter(this.article.Picture).image;
-    },
+    }
   },
   methods: {
     render(item) {
       return this.$md.render(item);
-    },
-  },
+    }
+  }
 };
 </script>
 
-<style>
-</style>
+<style></style>

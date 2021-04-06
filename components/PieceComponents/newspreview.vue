@@ -23,7 +23,7 @@ export default {
       return "/news/v2/" + this.article.id;
     },
     date() {
-      const date = this.article.createdAt.substring(0, 10);
+      const date = this.article.created_at.substring(0, 10);
       const mounths = [
         "Janvier",
         "Février",
@@ -36,11 +36,11 @@ export default {
         "Septembre",
         "Octobre",
         "Novembre",
-        "Décembre",
+        "Décembre"
       ][+date.substring(5, 7) - 1];
       return date.substring(8) + " " + mounths + " " + date.substring(0, 4);
-    },
-  },
+    }
+  }
 };
 </script>
 
